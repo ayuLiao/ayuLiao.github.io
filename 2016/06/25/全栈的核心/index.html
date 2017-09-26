@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            全栈的核心 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",随笔">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="全栈的核心 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="随笔"> 
+
+    
+        <meta property="article:published_time" content="Sat Jun 25 2016 08:32:19 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Aug 06 2016 09:16:26 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="全栈的核心 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2016/06/25/全栈的核心/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "全栈的核心",
+    "url": "http://lmwen.top/2016/06/25/全栈的核心/index.html",
+    "datePublished": "Sat Jun 25 2016 08:32:19 GMT+0800",
+    "dateModified": "Sat Aug 06 2016 09:16:26 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                全栈的核心
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>6月 25, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/随笔/">随笔</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=全栈的核心&url=http://lmwen.top/2016/06/25/全栈的核心/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=全栈的核心&url=http://lmwen.top/2016/06/25/全栈的核心/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2016/06/25/全栈的核心/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2016/06/25/全栈的核心/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2016/06/25/全栈的核心/index.html&title=全栈的核心" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>一个人的核心竞争力，是他的思维、眼界和快速学习的能力—-ayu</strong></p>
+<p>全栈工程师，英文为FullStackdevelopver，在一篇博文上看博主对其的定义是，会多项技能，可以独自完成具有一定工程难道项目的人，也就是人家可能开发一个东西要一个团队，每人负责不同的部分，但是你一个单挑搞定。</p>
+<p>全栈的概念，近几年时常听到，很多人似乎也往这方面努力，想成为一个拥有可以独立完成项目的能力，只要有点野心的工程师都会有这样的想法，我也不例外，我接触过比较多的技术（相对周围的朋友来说），一个学期内，总是会被一些有趣好玩的东西给吸引，于是就开始定一个简单的项目，用这个有趣的东西实现，这样既可以学会用东西，又可以做出一个东西来，学得多了，就会发现，这些东西也是术业有专攻的，如python适合做爬虫，GO适合多线程，java适合比较大型的工程，C++适合游戏内核，C适合计算机偏底层编程等等，但是也有非常厉害的技术，让你似乎可以学会它，就成为全栈了，如JavaScript，现在的JavaScript早已不在限制于前端了，用于后端的Node.js，用于硬件编程的Ruff，但是你学完这些真的成为全栈了吗？？非也</p>
+<p>在TED上，看见过一个概念，叫做多项潜能人，概念很简单，也就是会多种技能的人，听演讲的哥们讲，当时想学摄影，就拼命的投身摄影了，在一个很短的时间内，便学会的这项技能，还要有所提高就会显得非常困难，从高手成为大师是很难的，所以就丧失了兴趣，可是很快又被其他东西给吸引，于是又快速学会到高手级别，你会发现这样虽然可以学会很多东西，但是在编程的世界，可能作用就不大了！</p>
+<p>有一种比较深的体会，就是其他行业的人，无法体会我们技术迭代的有多快，大学里学的东西，早就已经过时了，所有很多公司会有入职培训，让你初步掌握一些技能，很多大学说，我们教的是方法，是学习的技巧，但是这些都是比较抽象枯燥的东西，有谁会有耐心，所以自己想通其中的关键很重要！</p>
+<p>我自认为学习东西比较快速的了，一般是有一个具体的目标，然后就是干，其中会遇到很多问题，最大的问题，就是没有全局的把握，遇到问题，不知道有什么具体的方法可以解决，上网一查，总是有很多千奇百怪的方式实现，就算找到方法，也不知道其原理，所以很多时候都是一脸懵逼的就做出来了，会用，但是真不懂为什么。</p>
+<p>久了就让我很忧虑，我好像会的很多，但好像又什么都不会，这种<strong>平庸的优秀</strong>，让我很苦恼，我想任何人都可以做到这样子，看身边的同学没有做，不是因为他们做不到，只能他们还没想通，然后去做而已，我很虚，我很担忧被人超越，直到我发现，我已经被人超越了。</p>
+<p>说了这么多，就是为了说，自己努力想成为全栈，尽量的学多一些时髦，自己有感兴趣的技术，然后丧失了自己的核心竞争力，可能一开始就没有，但是努力了依旧没有，总会让人忧伤！我学很多技术，但是永远跟不上技术的迭代，很多我都是浅尝而已，我明白了，做到人家做不到的才是核心，你不想被代替，就找难的去学。</p>
+<p>人工智能，大数据，云计算，互联网+，物联网，嵌入式编程，等等，一般的程序员一般的工程师怎么会了解这个，但是依旧没有安全感，我能学会，他人就一定可以学会，我并不觉得自己智商直逼爱因斯坦，同时学习这些东西，我也会显得很吃力，其缘由，是因为<strong>人脑是一个比较系统，你对没有概念的物体进行学习时，会调用以前的知识，如以前的相关概念，或与之相关联的知识体系，让新的知识融入旧的知识中去，只有对概念在大脑中定了位了，你才可以学会一件东西，不然，根本不知所云</strong>，但是很多时候，我们同样缺少与之相对的概念，这些概念的基础概念都没有。</p>
+<p>这些基础概念一般为编译原理，计算机组成原理，算法，计算机网络等，这些都是极其抽象的东西，一个东西难学，就是因为，在脑中概念的定位没有具体的凭借，只能靠一些基础知识来加以理解，放心，你第一次接触，一定理解不深而且很快遗忘，就是因为这样，这些基础，就划分了，我们这些工程师职业生涯的不同高度，他会的技术你也会，但是人家是技术总监，你还是一个程序员，就是因为自身只是会用，而人家知道它的根。</p>
+<p>昨天一个高中同学，大学专业是数学，问了我很多编程的东西，感觉他也开始往这方面努力了，我跟他说了很多，但是我并没有很多的优越感，我感到的是，编程原来是没有门槛的，比如艺术，比如音乐，你学会了没用，要创作，但是编程，我这种程度的编程，太容易变复制了！！</p>
+<p>我开始要重视所谓的自己没有兴趣的基础知识，编译原理啊，算法啊，这些，会让我花大量的时间，在这段时间中一定会有新的诱惑，但是我知道，学会了这些东西，才可以真正的快速高效的学习，这才是我的核心竞争力！</p>
+<p>努力靠近全栈，但是后面会发现，真正的全栈都是对底层基础理解十分深刻的人，而不是会最新技术的人，但是人家只要想，可以比你快得多的学习，学完后，比你厉害的多！！全栈的核心，其实还是计算机的种种原理，让这些重要的概念在脑中定位，成为快速学习的资本！</p>
+<p><strong>用代码创造乐趣，我是ayu</strong></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/06/27/牛顿扼杀了我们/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/06/18/python图片爬虫/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            做一个比较完整的微信小程序(一) | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",weixin">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="做一个比较完整的微信小程序(一) | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="weixin"> 
+
+    
+        <meta property="article:published_time" content="Mon Feb 06 2017 15:48:31 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Feb 06 2017 19:57:10 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="做一个比较完整的微信小程序(一) | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "做一个比较完整的微信小程序(一)",
+    "url": "http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html",
+    "datePublished": "Mon Feb 06 2017 15:48:31 GMT+0800",
+    "dateModified": "Mon Feb 06 2017 19:57:10 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何学习微信小程序？"><span class="post-toc-number">2.</span> <span class="post-toc-text">如何学习微信小程序？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动手开发"><span class="post-toc-number">3.</span> <span class="post-toc-text">动手开发</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                做一个比较完整的微信小程序(一)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>2月 06, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/weixin/">weixin</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=做一个比较完整的微信小程序(一)&url=http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=做一个比较完整的微信小程序(一)&url=http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/02/06/做一个比较完整的微信小程序-一/index.html&title=做一个比较完整的微信小程序(一)" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微信作为国民级应用，在2017年1月9日推出微信小程序，目的是为了连接跟多的线下场景，业内人士对微信小程序的看法各有千秋，我个人认为，微信小程序想完全的替代原生Android应用是很困难的，树扎的深，风再大也很难把它吹倒，只要你原生的Android应用足够优秀，用户足够喜欢，你就不必太惊恐于微信小程序，而那些用户很少用，或者功能比较简单的原生Android应用就很有可能被微信小程序给取代。其实微信小程序并不是首创，百度在此之前已经做过类似的尝试，当然结局就是不了了之了，上面这些都不是本文的重点，这篇文章主要来讲讲从0开始快速开发一个比较完整的微信小程序</p>
+<h2 id="如何学习微信小程序？"><a href="#如何学习微信小程序？" class="headerlink" title="如何学习微信小程序？"></a>如何学习微信小程序？</h2><p>开发微信小程序其实并不难，我自身从0开始花了5天时间就做出了一个月经管理小程序，先来看看具体的效果<br>首先是月经设置界面，用于设置月经的周期、长度和上次月经的时间</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%9C%88%E7%BB%8F%E8%AE%BE%E7%BD%AE.png" alt="月经设置"></p>
+<p>设置完成后，就会通过简单的算法，显示出女性一个月内不同的生理期</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%9C%88%E7%BB%8F%E7%AE%A1%E7%90%86.png" alt="月经管理"></p>
+<p>如果只是单纯的月经管理，那么这个小程序的功能就显得比较单一，所以又开发一个内容列表，展示一些月经知识</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%9C%88%E7%BB%8F%E7%9F%A5%E8%AF%86.png" alt="月经知识"></p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%9C%88%E7%BB%8F%E7%9F%A5%E8%AF%86%E5%86%85%E5%AE%B9.png" alt="月经知识内容"></p>
+<p>如何在比较短的时间内学会并使用这个新技术呢？我自己使用了5天左右的时间，首先可能因为我帅所以吸收的比较快，其次就是学习新技术也是有套路的</p>
+<p>我的惯用套路就是，先看官方文档，微信小程序的官方文档比较全面，而且比较简单，没有什么深邃的内容，花2~3个小时把里面的内容大致的过一遍，有个大概的印象就好了，不要求你全部记住，知道有这个东西则可，然后混迹于比较成熟的技术论坛，直接Google微信小程序论坛，一搜一大堆，看看其他人使用微信小程序遇到什么问题，或者有什么比较好的第三方工具，然后就是从论坛上下载一些实战视频教程，我知道很多技术人员不推荐看视频教程来学习技术，觉得非常浪费时间，但是我觉得看实战教程还是有点用处的，当你看完文档对微信小程序有个模糊的了解后，弄一些视频来看，效果很不错，当然很多视频中老师的语速非常慢，所以我一般都是以2.5倍的速度来看的，遇到自己会的内容，就直接快进跳过，这样就可以快速的学会开发一个完整项目的流程，如果有一些比较好的项目源码，建议也要研究研究，我做完上面的工作用来1天左右的时间，接下来四天就是动手开发了，了解了这么多东西，如果不动手开发，不去遇到一些实际上的问题，是很难掌握前面学习的理论知识的，动手的重要性就不多讲了，总之很重要！</p>
+<h2 id="动手开发"><a href="#动手开发" class="headerlink" title="动手开发"></a>动手开发</h2><p>下面来简单的看看开发的逻辑，只给出代码片段，具体代码可以在文末找到下载链接，项目的结构如下<br><img src="http://obfs4iize.bkt.clouddn.com/ayuLiao%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png" alt="ayuLiao项目结构"></p>
+<p>首先是用于设置月经周期、长度和上次月经时间的设置界面，该界面使用了picker组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">picker</div><div class="line">从底部弹起的滚动选择器，现支持三种选择器，通过mode来区分，分别是普通选择器，时间选择器，日期选择器，默认是普通选择器。</div></pre></td></tr></table></figure></p>
+<p>设置完后，点击按钮，将设置完的数据保存到缓存中，然后跳转到当月生理期显示界面（代码在picker文件夹下）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">save_btn(e) &#123;</div><div class="line">    <span class="keyword">const</span> date = e.currentTarget.dataset.date</div><div class="line">    <span class="keyword">const</span> a = e.currentTarget.dataset.array</div><div class="line">    <span class="keyword">const</span> a2 = e.currentTarget.dataset.arrayb</div><div class="line">    <span class="built_in">console</span>.log(date, a, a2)</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="comment">//经期长度</span></div><div class="line">      wx.setStorageSync(<span class="string">'jinqi'</span>, a)</div><div class="line">      <span class="comment">//周期长度</span></div><div class="line">      wx.setStorageSync(<span class="string">'zhouqi'</span>, a2)</div><div class="line">      <span class="comment">//最近一次月经</span></div><div class="line">      wx.setStorageSync(<span class="string">'zuijinriqi'</span>, date)</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    wx.switchTab(&#123;</div><div class="line">      url: <span class="string">'../calendar/calendar'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>这里有三个点要注意<br>1.这样通过data-Xxx来实现将wxml界面中的数据传递到js中，可以通过e.currentTarget.dataset.Xxx这段js代码获得相应的数据<br>2.使用wx.setStorageSync(key, value)将数据存入缓存中，缓存中的数据将永久保存，除非用户卸载了微信，最多可以缓存10M的数据<br>3.要跳转到tabBar指定的界面要使用wx.switchTab(OBJECT)，wx.navigateTo(OBJECT)只能跳转到tabBar指定之外的界面</p>
+<p>接着来看现实月经规律的界面，该界面分为3部分</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E7%BB%8F%E6%9C%9F%E7%AE%A1%E7%90%863%E9%83%A8%E5%88%86.png" alt="经期管理3部分"></p>
+<p>第一个部分:在app.json文件中进行设置，实现这个tabBar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&quot;tabBar&quot;: &#123;</div><div class="line">    &quot;backgroundColor&quot;: &quot;#343&quot;,</div><div class="line">    &quot;color&quot;: &quot;#fff&quot;,</div><div class="line">    &quot;list&quot;: [</div><div class="line">      &#123;</div><div class="line">        &quot;pagePath&quot;: &quot;pages/calendar/calendar&quot;,</div><div class="line">        &quot;text&quot;: &quot;月经记录&quot;,</div><div class="line">        &quot;iconPath&quot;: &quot;image/1.png&quot;,</div><div class="line">        &quot;selectedIconPath&quot;: &quot;image/2.png&quot;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        &quot;pagePath&quot;: &quot;pages/lists/lists&quot;,</div><div class="line">        &quot;text&quot;: &quot;月经知识&quot;,</div><div class="line">        &quot;iconPath&quot;: &quot;image/3.png&quot;,</div><div class="line">        &quot;selectedIconPath&quot;: &quot;image/4.png&quot;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        &quot;pagePath&quot;: &quot;pages/picker/picker&quot;,</div><div class="line">        &quot;text&quot;: &quot;月经设置&quot;,</div><div class="line">        &quot;iconPath&quot;: &quot;image/2.png&quot;,</div><div class="line">        &quot;selectedIconPath&quot;: &quot;image/4.png&quot;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>如果要重其他界面跳转到pagePath属性指定的界面要使用wx.switchTab(OBJECT)</p>
+<p>第二部分比较复杂，通过for循环和if判断将对应数组中的值渲染上去<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"days box box-lr box-wrap"</span>&gt;</span></div><div class="line">     <span class="comment">&lt;!--当月空出的位置--&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;hasEmptyGrid&#125;&#125;"</span> <span class="attr">class</span>=<span class="string">"grid white-color box box-align-center box-pack-center"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;empytGrids&#125;&#125;"</span> <span class="attr">wx:key</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span> <span class="attr">data-idx</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">     <span class="comment">&lt;!--当月空出的位置--&gt;</span></div><div class="line">     <span class="comment">&lt;!--月数--&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"grid white-color box box-align-center box-pack-center"</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;days&#125;&#125;"</span> <span class="attr">wx:key</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span> <span class="attr">data-idx</span>=<span class="string">"&#123;&#123;index&#125;&#125;"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;yue&#125;&#125;"</span> <span class="attr">wx:for-item</span>=<span class="string">"y"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;item == y&#125;&#125;"</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"day box box-align-center box-pack-center border-radius pink-bg"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;weixian&#125;&#125;"</span> <span class="attr">wx:for-item</span>=<span class="string">"w"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;item == w&#125;&#125;"</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"day box box-align-center box-pack-center border-radius purple-bg"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;anquan&#125;&#125;"</span> <span class="attr">wx:for-item</span>=<span class="string">"a"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;item == a&#125;&#125;"</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"day box box-align-center box-pack-center border-radius green-bg"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;item == pailuanri&#125;&#125;"</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"day box box-align-center box-pack-center border-radius orange-bg"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">       <span class="comment">&lt;!--月数--&gt;</span></div><div class="line">     <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这里有5个数组，empytGrids数组表示渲染时要空出的位置，days数组表示这个月所有的天数，yue数组表示这个月月经的天数，weixian数组表示这个月危险期的天数，anquan数组表示这个月安全期的天数，使用不同的背景色渲染出来则可</p>
+<p>先来看一下如何获得empytGrids数组和days数组，代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取当月共多少天，传年和月</span></div><div class="line"> getThisMonthDays(year, month) &#123;</div><div class="line">   <span class="comment">//通过Date来获取当月天数</span></div><div class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(year, month, <span class="number">0</span>).getDate();</div><div class="line"> &#125;,</div><div class="line"> <span class="comment">// 获取当月第一天星期几，传年和月</span></div><div class="line"> getFirstDayOfWeek(year, month) &#123;</div><div class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.UTC(year, month - <span class="number">1</span>, <span class="number">1</span>)).getDay();</div><div class="line"> &#125;,</div><div class="line"> <span class="comment">// 计算当月1号前空了几个格子</span></div><div class="line"> calculateEmptyGrids(year, month) &#123;</div><div class="line">   <span class="keyword">const</span> firstDayOfWeek = <span class="keyword">this</span>.getFirstDayOfWeek(year, month);</div><div class="line">   <span class="keyword">let</span> empytGrids = [];</div><div class="line">   <span class="keyword">if</span> (firstDayOfWeek &gt; <span class="number">0</span>) &#123;</div><div class="line">     <span class="comment">//将不渲染的添加进入empytGrids数组</span></div><div class="line">     <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; firstDayOfWeek; i++) &#123;</div><div class="line">       empytGrids.push(i);</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">this</span>.setData(&#123;</div><div class="line">       hasEmptyGrid: <span class="literal">true</span>,</div><div class="line">       empytGrids</div><div class="line">     &#125;);</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">     <span class="keyword">this</span>.setData(&#123;</div><div class="line">       hasEmptyGrid: <span class="literal">false</span>,</div><div class="line">       empytGrids: []</div><div class="line">     &#125;);</div><div class="line">   &#125;</div><div class="line"> &#125;,</div><div class="line"> <span class="comment">// 绘制当月天数占的格子</span></div><div class="line"> calculateDays(year, month) &#123;</div><div class="line">   <span class="keyword">let</span> days = [];</div><div class="line">   <span class="comment">//获得当月共有多少天</span></div><div class="line">   <span class="keyword">const</span> thisMonthDays = <span class="keyword">this</span>.getThisMonthDays(year, month);</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= thisMonthDays; i++) &#123;</div><div class="line">     days.push(i);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//设置当月天数</span></div><div class="line">   <span class="keyword">this</span>.setData(&#123;</div><div class="line">     days</div><div class="line">   &#125;);</div><div class="line"> &#125;,</div></pre></td></tr></table></figure></p>
+<p>代码注释非常清楚，要获得empytGrids数组，先通过getFirstDayOfWeek()获得这个月的第一个天是星期几，因为wxml界面显示时是从星期日开始的，所以这个月第一天是星期一就要空一格，而要获得days数组，则通过getThisMonthDays()方法获得这个月的天数，然后循环赋值则可</p>
+<p>接着要获得yue数组、weixian数组和anquan数组，这里就要理解计算月经的算法，网上有很多在线月经计算器，在在线月经计算器旁一般都会有介绍如何简单的计算月经，其实就是通过上次月经的日期获得下次月经的日期，然后通过下次月经的日期减去14就可以获得排卵日，一般排卵日的前5天和后4天就是排卵期，在前面的月经设置界面，我们设置了月经长度、月经周期和上次月经的日期，通过这些信息就可以写出一个简单的算法，将这个月的日期分成3个部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a:当前日期与初次月经的日期相差的天数再与月经周期取余</div><div class="line"></div><div class="line">a&lt;月经长度----&gt;此时在月经期</div><div class="line"></div><div class="line">月经长度&lt;a&lt;月经周期-14-5----&gt;此时在安全期</div><div class="line"></div><div class="line">月经周期-14-5&lt;a&lt;月经周期-14+4----&gt;此时在排卵期</div><div class="line"></div><div class="line">月经周期-14+4&lt;a&lt;月经周期----&gt;此时在安全期</div></pre></td></tr></table></figure></p>
+<p>通过这个算法，就可以计算月经情况了，部分代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//计算天数差的函数</span></div><div class="line">  DateDiff(sDate1, sDate2) &#123;    <span class="comment">//sDate1和sDate2是2002-12-18格式  </span></div><div class="line">    <span class="keyword">var</span> aDate, oDate1, oDate2, iDays</div><div class="line">    aDate = sDate1.split(<span class="string">"-"</span>)</div><div class="line">    oDate1 = <span class="keyword">new</span> <span class="built_in">Date</span>(aDate[<span class="number">1</span>] + <span class="string">'-'</span> + aDate[<span class="number">2</span>] + <span class="string">'-'</span> + aDate[<span class="number">0</span>])    <span class="comment">//转换为12-18-2002格式  </span></div><div class="line">    aDate = sDate2.split(<span class="string">"-"</span>)</div><div class="line">    oDate2 = <span class="keyword">new</span> <span class="built_in">Date</span>(aDate[<span class="number">1</span>] + <span class="string">'-'</span> + aDate[<span class="number">2</span>] + <span class="string">'-'</span> + aDate[<span class="number">0</span>])</div><div class="line">    iDays = <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.abs(oDate1 - oDate2) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>)    <span class="comment">//把相差的毫秒数转换为天数  </span></div><div class="line">    <span class="keyword">return</span> iDays</div><div class="line">  &#125;,</div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">//计算上一个月月经初潮的日期，用于判断,day为月经周期,yuejindate上次月经日期</span></div><div class="line">  oldyuejindate(yuejindate, day) &#123;</div><div class="line">    <span class="keyword">var</span> yue = yuejindate.split(<span class="string">"-"</span>)</div><div class="line">    <span class="keyword">var</span> yue2 = <span class="keyword">new</span> <span class="built_in">Date</span>(yue[<span class="number">0</span>] + <span class="string">"/"</span> + yue[<span class="number">1</span>] + <span class="string">"/"</span> + yue[<span class="number">2</span>]);</div><div class="line">    <span class="keyword">var</span> intValue = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> endDate = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">var</span> days</div><div class="line">    <span class="comment">//获得指定日期的毫秒数</span></div><div class="line">    intValue = yue2.getTime();</div><div class="line">    <span class="comment">// console.log("hahhaha"+intValue)</span></div><div class="line">    intValue -= day * (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</div><div class="line">    endDate = <span class="keyword">new</span> <span class="built_in">Date</span>(intValue);</div><div class="line">    days = endDate.getFullYear() + <span class="string">"-"</span> + (endDate.getMonth() + <span class="number">1</span>) + <span class="string">"-"</span> + endDate.getDate()</div><div class="line">    <span class="comment">// console.log("hahhaha"+days)</span></div><div class="line">    <span class="keyword">return</span> days</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+<p>DateDiff()方法用于计算两个日期间相差的天数，oldyuejindate()方法用于计算上一次初次月经的时间，之所以要编写oldyuejindate()方法是因为用户有时喜欢看几个月之前的月经规律，这样在月经设置界面设置的初次月经的日期就不能用了，该日期用于查看这个日期后的月份对应的月经规律，接着看代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line">viewyue(cur_year, cur_month) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="comment">//月经持续时间</span></div><div class="line">      <span class="keyword">var</span> jinqi = wx.getStorageSync(<span class="string">'jinqi'</span>);</div><div class="line">      <span class="comment">//月经周期</span></div><div class="line">      <span class="keyword">var</span> zhouqi = wx.getStorageSync(<span class="string">'zhouqi'</span>);</div><div class="line">      <span class="comment">//上次月经日期</span></div><div class="line">      <span class="keyword">var</span> zuijinriqi = wx.getStorageSync(<span class="string">'zuijinriqi'</span>);</div><div class="line">      <span class="keyword">if</span> (zuijinriqi) &#123;</div><div class="line">        <span class="comment">// Do something with return value</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">      <span class="comment">// Do something when catch error</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">//当前年月日</span></div><div class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">const</span> day = date.getDate();</div><div class="line">    <span class="keyword">var</span> nowday = cur_year + <span class="string">"-"</span> + cur_month + <span class="string">"-"</span> + day;</div><div class="line">    <span class="comment">//将当月所有的日期都根据条件判断一下，然后放入不同的数组中</span></div><div class="line">    <span class="keyword">var</span> y = <span class="number">0</span>, a = <span class="number">0</span>, w = <span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> yuejinqi = [];</div><div class="line">    <span class="keyword">var</span> anquanqi = [];</div><div class="line">    <span class="keyword">var</span> weixianqi = [];</div><div class="line">    <span class="built_in">console</span>.log(jinqi, zhouqi, date);</div><div class="line">    <span class="comment">//月经日期对应的毫秒数</span></div><div class="line">    <span class="keyword">var</span> zui = (<span class="keyword">new</span> <span class="built_in">Date</span>(zuijinriqi)).getTime();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">this</span>.getThisMonthDays(cur_year, cur_month); i++) &#123;</div><div class="line">      <span class="keyword">var</span> yueday = cur_year + <span class="string">"-"</span> + cur_month + <span class="string">"-"</span> + i;</div><div class="line">      <span class="comment">//比初始月经数据要小的日期，就使用前一次月经日期</span></div><div class="line">      <span class="keyword">if</span> ((<span class="keyword">new</span> <span class="built_in">Date</span>(yueday)).getTime() &lt; zui) &#123;</div><div class="line">        <span class="keyword">var</span> zuijinriqi2 = <span class="keyword">this</span>.oldyuejindate(zuijinriqi, zhouqi * <span class="number">100</span>)</div><div class="line">        <span class="built_in">console</span>.log(zuijinriqi2)</div><div class="line">        <span class="keyword">var</span> datediff = <span class="keyword">this</span>.DateDiff(yueday, zuijinriqi2) % zhouqi;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">var</span> datediff = <span class="keyword">this</span>.DateDiff(yueday, zuijinriqi) % zhouqi;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">//月经期</span></div><div class="line">      <span class="keyword">if</span> (datediff &lt; jinqi) &#123;</div><div class="line">        yuejinqi.push(i)</div><div class="line">        <span class="comment">// console.log("y" + datediff)</span></div><div class="line">        <span class="keyword">if</span> (nowday == yueday) &#123;</div><div class="line">          canvasetext = <span class="string">"月经期"</span>;</div><div class="line">          canvaseNum = datediff + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (jinqi &lt;= datediff &amp;&amp; datediff &lt; zhouqi - <span class="number">19</span>) &#123;</div><div class="line">        anquanqi.push(i)</div><div class="line">        <span class="keyword">if</span> (nowday == yueday) &#123;</div><div class="line">          canvasetext = <span class="string">"安全期"</span>;</div><div class="line">          canvaseNum = datediff - jinqi + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (zhouqi - <span class="number">19</span> &lt;= datediff &amp;&amp; datediff &lt; zhouqi - <span class="number">10</span>) &#123;</div><div class="line">         <span class="keyword">if</span>(datediff!=zhouqi<span class="number">-14</span>)&#123;</div><div class="line">           weixianqi.push(i)</div><div class="line">         &#125;</div><div class="line"></div><div class="line">         <span class="keyword">if</span>(datediff==zhouqi<span class="number">-14</span>)&#123;</div><div class="line">          <span class="keyword">this</span>.setData(&#123;</div><div class="line">            pailuanri:i</div><div class="line">          &#125;)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (nowday == yueday) &#123;</div><div class="line">          canvasetext = <span class="string">"危险期"</span>;</div><div class="line">          canvaseNum = datediff - zhouqi + <span class="number">20</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (zhouqi - <span class="number">10</span> &lt;= datediff &amp;&amp; datediff &lt; <span class="number">28</span>) &#123;</div><div class="line">        anquanqi.push(i)</div><div class="line">        <span class="keyword">if</span> (nowday == yueday) &#123;</div><div class="line">          canvasetext = <span class="string">"安全期"</span>;</div><div class="line">          canvaseNum = datediff - zhouqi + <span class="number">11</span>;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.setData(&#123;</div><div class="line">      yue: yuejinqi,</div><div class="line">      anquan: anquanqi,</div><div class="line">      weixian: weixianqi</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+<p>当我们要查看上一月下一个月时，就要刷新上面5个数组，从新渲染一遍<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 切换控制年月</span></div><div class="line">  handleCalendar(e) &#123;</div><div class="line">    <span class="keyword">const</span> handle = e.currentTarget.dataset.handle;</div><div class="line">    <span class="keyword">const</span> cur_year = <span class="keyword">this</span>.data.cur_year;</div><div class="line">    <span class="keyword">const</span> cur_month = <span class="keyword">this</span>.data.cur_month;</div><div class="line">    <span class="comment">//上一个月，点击了prev</span></div><div class="line">    <span class="keyword">if</span> (handle === <span class="string">'prev'</span>) &#123;</div><div class="line">      <span class="keyword">let</span> newMonth = cur_month - <span class="number">1</span>;</div><div class="line">      <span class="keyword">let</span> newYear = cur_year;</div><div class="line">      <span class="comment">//如果是一月月，就上一年</span></div><div class="line">      <span class="keyword">if</span> (newMonth &lt; <span class="number">1</span>) &#123;</div><div class="line">        newYear = cur_year - <span class="number">1</span>;</div><div class="line">        newMonth = <span class="number">12</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">//获取当月天数</span></div><div class="line">      <span class="keyword">this</span>.calculateDays(newYear, newMonth);</div><div class="line">      <span class="comment">//获得当月要空的格子</span></div><div class="line">      <span class="keyword">this</span>.calculateEmptyGrids(newYear, newMonth);</div><div class="line">      <span class="keyword">this</span>.viewyue(newYear, newMonth)</div><div class="line">      <span class="keyword">this</span>.setData(&#123;</div><div class="line">        cur_year: newYear,</div><div class="line">        cur_month: newMonth</div><div class="line">      &#125;)</div><div class="line"></div><div class="line">    &#125; <span class="keyword">else</span> &#123;<span class="comment">//下一个月</span></div><div class="line">      <span class="keyword">let</span> newMonth = cur_month + <span class="number">1</span>;</div><div class="line">      <span class="keyword">let</span> newYear = cur_year;</div><div class="line">      <span class="keyword">if</span> (newMonth &gt; <span class="number">12</span>) &#123;</div><div class="line">        newYear = cur_year + <span class="number">1</span>;</div><div class="line">        newMonth = <span class="number">1</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.calculateDays(newYear, newMonth);</div><div class="line">      <span class="keyword">this</span>.calculateEmptyGrids(newYear, newMonth);</div><div class="line">      <span class="keyword">this</span>.viewyue(newYear, newMonth)</div><div class="line">      <span class="keyword">this</span>.setData(&#123;</div><div class="line">        cur_year: newYear,</div><div class="line">        cur_month: newMonth</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+<p>接着看到界面中第三个部分，一个曲形，实现这个非常简单，使用canvas绘制一个大圆，让界面显示大圆的一部分则可，然后同样通过canvas将相应的文字绘制上去，看了微信小程序文档，没有获得绘制文字长度的方法，所以为了让界面好看就自己调整了一下文字放置的位置，具体代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始化数据</span></div><div class="line">  onShow(options) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">const</span> cur_year = date.getFullYear();</div><div class="line">    <span class="keyword">const</span> cur_month = date.getMonth() + <span class="number">1</span>;</div><div class="line">    <span class="keyword">this</span>.viewyue(cur_year, cur_month)</div><div class="line"></div><div class="line">    <span class="keyword">var</span> canvasewidth = <span class="keyword">this</span>.getSystemInfo()</div><div class="line">    <span class="comment">//canvas绘图</span></div><div class="line">    <span class="keyword">const</span> ctx = wx.createCanvasContext(<span class="string">'ayuCanvas'</span>)</div><div class="line">    <span class="comment">//屏幕宽度的一半</span></div><div class="line">    <span class="keyword">var</span> c2 = canvasewidth / <span class="number">2</span></div><div class="line">    <span class="comment">// 花园</span></div><div class="line">    ctx.arc(c2, -c2 * <span class="number">2</span>, c2 * <span class="number">3</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI)</div><div class="line">    ctx.setFillStyle(<span class="string">'#FF5073'</span>)</div><div class="line">    ctx.fill()</div><div class="line"></div><div class="line">    ctx.setFontSize(<span class="number">15</span>)</div><div class="line">    ctx.setFillStyle(<span class="string">'#FFFFFF'</span>)</div><div class="line">    ctx.fillText(canvasetext, c2<span class="number">-24</span>, c2/<span class="number">3</span><span class="number">-20</span>)</div><div class="line">    ctx.setFontSize(<span class="number">50</span>)</div><div class="line">    <span class="keyword">if</span>(canvaseNum&lt;<span class="number">10</span>)&#123;</div><div class="line">       ctx.fillText(canvaseNum, c2<span class="number">-15</span>, c2<span class="number">-40</span>)</div><div class="line">        ctx.setFontSize(<span class="number">15</span>)</div><div class="line">    ctx.fillText(<span class="string">"天"</span>, c2+<span class="number">20</span>, c2<span class="number">-40</span>)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">      ctx.fillText(canvaseNum, c2<span class="number">-25</span>, c2<span class="number">-40</span>)</div><div class="line">       ctx.setFontSize(<span class="number">15</span>)</div><div class="line">    ctx.fillText(<span class="string">"天"</span>, c2+<span class="number">35</span>, c2<span class="number">-40</span>)</div><div class="line">    &#125;</div><div class="line">    ctx.draw()</div><div class="line"></div><div class="line">    <span class="keyword">const</span> weeks_ch = [<span class="string">'日'</span>, <span class="string">'一'</span>, <span class="string">'二'</span>, <span class="string">'三'</span>, <span class="string">'四'</span>, <span class="string">'五'</span>, <span class="string">'六'</span>];</div><div class="line">    <span class="comment">//调用calculateEmptyGrids计算出当月空出几个格子，传入年和月</span></div><div class="line">    <span class="keyword">this</span>.calculateEmptyGrids(cur_year, cur_month);</div><div class="line">    <span class="comment">//调用calculateDays计算当月的天数</span></div><div class="line">    <span class="keyword">this</span>.calculateDays(cur_year, cur_month);</div><div class="line">    <span class="comment">//获得系统消息</span></div><div class="line">    <span class="keyword">this</span>.getSystemInfo();</div><div class="line">    <span class="keyword">this</span>.setData(&#123;</div><div class="line">      cur_year,</div><div class="line">      cur_month,</div><div class="line">      weeks_ch</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+<p>这样，月经规律显示界面就完成了，至于wcss代码就不展示出来了，太占篇幅，其实跟css十分相似，这篇就先将到这里，下一篇接着将月经知识展示列表的制作</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/02/06/做一个比较完整的微信小程序-二/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/09/12/实现RBAC权限控制/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

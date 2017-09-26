@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            搭建自己的wordpress博客 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",wordpress">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="搭建自己的wordpress博客 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="wordpress"> 
+
+    
+        <meta property="article:published_time" content="Wed May 31 2017 11:06:20 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Aug 11 2017 09:56:51 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="搭建自己的wordpress博客 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "搭建自己的wordpress博客",
+    "url": "http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html",
+    "datePublished": "Wed May 31 2017 11:06:20 GMT+0800",
+    "dateModified": "Fri Aug 11 2017 09:56:51 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lnmp"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">lnmp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搬瓦工"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">搬瓦工</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GoDabby"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">GoDabby</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">环境搭建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加虚拟机"><span class="post-toc-number">4.</span> <span class="post-toc-text">添加虚拟机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装wordpress"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装wordpress</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#购买域名"><span class="post-toc-number">6.</span> <span class="post-toc-text">购买域名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装wordpress-1"><span class="post-toc-number">7.</span> <span class="post-toc-text">安装wordpress</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一些问题"><span class="post-toc-number">8.</span> <span class="post-toc-text">一些问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插件无法直接下载安装"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">插件无法直接下载安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#goenjoychina-com无法访问"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">goenjoychina.com无法访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#wordpress只有一个主题"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">wordpress只有一个主题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结尾"><span class="post-toc-number">9.</span> <span class="post-toc-text">结尾</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                搭建自己的wordpress博客
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>5月 31, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/wordpress/">wordpress</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=搭建自己的wordpress博客&url=http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=搭建自己的wordpress博客&url=http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/05/31/搭建自己的wordpress博客/index.html&title=搭建自己的wordpress博客" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>我本来就有一个博客，<a href="lmwen.top">lmwen.top</a>，这个博客是一个静态界面，搭建在github上，每个github用户都可以在github page上搭建一个静态界面，很多人将它弄为自己的博客，挺geek的。</p>
+<p>静态界面的优势就是在于加载速度快，放在github page上的好处是，界面怎么布局随你搞，不会想在CSND博客上固定的模板，而且还有很多CSND上的广告，虽然在上面创建一个博客只需要注册一个账号则可，但是限制还是比较大的，对应爱自由的我们应该选择一个更好的。</p>
+<p>如果搭建<a href="lmwen.top">lmwen.top</a>这样的博客，我已经写过了，有兴趣的可以看<a href="http://lmwen.top/2016/06/09/hexo-github%E7%BB%99%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%A9%BA%E9%97%B4/">hexo+github给自己搭建一个博客空间</a></p>
+<p>这次我打算使用wordpress来搭建一个英文博客，所以使用的东西都是针对国外的。wordpress是一款CMS，简单的理解就是内容管理后台，通过全世界的努力，它已经比较完善了，它最强大的优势在于庞大的插件和主题库，你想要什么功能，一般都有插件将其实现了，你根本不必再编写代码，你想要怎么样的布局，基本上都可以在主题库中找到自己想要的效果，而且很酷很专业</p>
+<p>本wordpress搭建的环境<br>使用lnmp在搬瓦工vps上搭建wordpress，系统是centos7，在Godabby上购买域名并进行域名解析</p>
+<h2 id="环境介绍"><a href="#环境介绍" class="headerlink" title="环境介绍"></a>环境介绍</h2><p>可能不是所有人都知道lnmp、搬瓦工和Godabby，下面来简单介绍一下</p>
+<h3 id="lnmp"><a href="#lnmp" class="headerlink" title="lnmp"></a>lnmp</h3><p>lnmp其实就是一键式集成环境，l代表Linux，n代表Nginx，m代表MySQL，p代表PHP<br>其实我并不怎么喜欢集成环境，更喜欢自己逐个安装Nginx、MySQL和PHP，应该在centos7上安装这些都很简单，当然在centos7把MySQL从官方源中去除了，变成了Mariadb，其实这两个没差，想深入了解一下可以看我另外一篇博文<a href="http://lmwen.top/2017/03/15/CentOS7%E6%90%AD%E5%BB%BA%E9%85%8D%E7%BD%AENginx-PHP-MySQL/">CentOS7搭建配置Nginx+PHP+MySQL</a>，我之所以不喜欢集成环境不是因为它不好，有时它封装的很好，而我又没有详细的看过它的官方文档，导致要修改配置文件的时候，不知道集成环境将相应的配置文件放到哪里去了，很尴尬，而且很多优秀的集成环境封装的太好，让我们使用起来十分方便，但是高度封装导致的问题就是用户如果没有深入的了解该集成环境就很难比较细致的控制他（控制粒度比较大）</p>
+<p>但是这里我建议使用lnmp是因为它对wordpress很友好，如果你分别安装Nginx、MySQL和PHP后，然后自己搭建wordpress，这也是可行的，但是会出现一些让认头痛的问题，wordpress的路径只能使用最原始的解析，不然Nginx会报错，你需要通过比较繁杂的配置让Nginx可以正常的解析wordpress的路径</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/Nginx%E8%B7%AF%E5%BE%84%E6%8A%A5%E9%94%99.png" alt="Nginx路径报错.png"></p>
+<p>如果使用Apache是完全没有问题的，如果想继续使用Nginx，要没配置Nginx（推荐），要么修改wordpress路径，下面展示修改wordpress路径的方法，如果要配置Nginx比较复杂，本文就不介绍了，因为我也没试过配置Nginx</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%9C%B4%E7%B4%A0url.png" alt="朴素url.png"></p>
+<p>然而你使用lnmp，它已经帮你搞定这个头痛的问题了</p>
+<h3 id="搬瓦工"><a href="#搬瓦工" class="headerlink" title="搬瓦工"></a>搬瓦工</h3><p>如果你有动念头搭建自己的VPN（这个后面有机会可以写一篇博文），你就应该听过搬瓦工，搬瓦工是一个知名的vps商家，出售各种vps，应该是国外商家，而且支持支付宝（很多国外商家并不支持支付宝），所以很多国人使用，同时因为搬瓦工有一键搭建梯子的服务，所以购买一个搬瓦工，自己搭建翻墙服务器非常简单，我使用搬瓦工最不爽的是，通过xshell连接上搬瓦工服务器后，敲命令的反应速度真是慢啊，每个命令字符几乎都要等1秒，把我的梯子换了多个线路还是不行，最终我认怂，就这样用着先，一开始还担心搭建的wordpress反应速度太慢，但是搭建成功，发现自己的担忧是多余的</p>
+<p>在vps这个圈子，其实有很多玩法，很多圈内次，我也接触不深，就大概知道一些，但是感觉这行的黄牛做的真是风生水起，想了解跟多vps可以看看这个博客，职业搞基，感觉也是一个职业vps黄牛，<a href="http://www.vpsdaquan.cn" target="_blank" rel="external">vps大全</a></p>
+<h3 id="GoDabby"><a href="#GoDabby" class="headerlink" title="GoDabby"></a>GoDabby</h3><p>其实就是一个外国的域名商，其实网上有些时候会有所谓的免费域名和很低价钱的虚拟空间，但大多数时候都是一个坑。</p>
+<p>我之所以选择GoDabby，而不选择万网啊，新网啊，西部数据之类的国内知名域名商户是因为懒的备案，我西部数据还有12个域名，都是当时脑子一热觉得是好域名买下来等着倒卖的，结果显示留在西部数据的硬盘里吃灰。</p>
+<p>在GoDabby购买域名一个是因为它也支持支付宝，而且GoDabby在全世界也是很有名气的域名商家，同时因为做英文网站，针对外国用户，如果是通过国内商家购买，做域名解析可能会影响到国外流量访问网站的速度（这个只是个人猜测觉得会有影响），所以就直接使用GoDabby了，GoDabby对比国内的域名商家的一个特定就是，真他么贵，以com结尾的域名要70元，国内是50多元，但是我还是忍痛买了，反正自己迟早也会富成废人，所以没必要在乎小钱！</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>这里我认为你已经购买了搬瓦工的vps，并通过ssh工具连接上了，这里我使用的是xshell，购买细节，搬瓦工后台设置等等内容可以去找其他教程。</p>
+<p>通过xshell连接上后，就可以安装lnmp了，安装细节官网已经讲的比较详细了 <a href="https://lnmp.org/install.html" target="_blank" rel="external">lnmp官网安装教程</a>，这里我再提一下要注意的</p>
+<p>首先，通过wordpress搭建一个网站，一般都会选用占内存最小的系统，这里就是最小版的centos，里面很多东西都没有，因为我们用不到，搭建网站有4个点最重要：<strong>内容、布局、安全、响应速度</strong>，系统占的内存小那么wordpress就有跟多可用内存，这样网站响应的速度相应会快一些，如果想要跟快，除了花多点钱换台牛逼的服务器还有跟办法就是使用CDN服务，压缩自己的图片文件，合并css和js减少网页的请求等等</p>
+<p>因为一般使用的是最小版的系统，所以先安装screen和vim（vim可以不安装，但是相对vi我更喜欢vim，各位随意），Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。目的就在于，避免我们SSH连接远程Linux服务器时要执行长时间任务，如果我们连接Linux的会话窗口关闭了，那么执行远程耗时任务的线程也被关闭了，下次又要重头开始，非常麻烦，所以使用screen开启一个新的会话，当我们连接断了，该会话还在</p>
+<p>只要Screen本身没有终止，在其内部运行的会话都可以恢复。远程登录的用户即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）<br>更多screen命令的内容，可以看这篇博文<a href="http://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html" target="_blank" rel="external">linux screen 命令详解</a></p>
+<p>安装好screen后，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">screen -S lnmp</div><div class="line">开启一个新的会话窗口</div></pre></td></tr></table></figure></p>
+<p>然后你可能还需要安装wget，命令如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y wget</div></pre></td></tr></table></figure></p>
+<p>然后通过wget来下载稳定版的LNMP一键安装包则可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz &amp;&amp; tar zxf lnmp1.3-full.tar.gz &amp;&amp; cd lnmp1.3-full &amp;&amp; ./install.sh lnmp</div></pre></td></tr></table></figure></p>
+<p>其他安装细节看这<a href="https://lnmp.org/install.html" target="_blank" rel="external">lnmp官网安装教程</a></p>
+<p>安装成功后会出现下面的界面<br><img src="http://obfs4iize.bkt.clouddn.com/lnmp%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="lnmp安装成功.png"></p>
+<h2 id="添加虚拟机"><a href="#添加虚拟机" class="headerlink" title="添加虚拟机"></a>添加虚拟机</h2><p>当你成功安装lnmp后，你就可以通过lnmp来添加虚拟主机了，这里的虚拟主机其实就是一个网站的根目录，当然其中lnmp为我们做了一些控制。一个虚拟主机对应一个网站，当我们创建完虚拟主机后，就可以将网站相关的代码上传上来，聪明的你应该知道了，lnmp很方便让你一个主机有多个网站</p>
+<p>可以通过如下命令来添加虚拟主机<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lnmp vhost add</div></pre></td></tr></table></figure></p>
+<p>然后会出现交互界面，让你配置一些信息</p>
+<p>1.首先会让你输入域名，你输入自己注册的域名，如果还没注册，可以在这里停一些，将域名注册好再回到这里继续操作，当然这些配置操作都会写入相应的配置文件，所以后面是可以修改的，不用过于谨慎，通过与这些界面进行交互，形成的配置文件会在这里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/conf/vhost/域名.conf</div></pre></td></tr></table></figure></p>
+<p>当你输入网域名后，它还会提示你是否添加其他域名，我这里选择n，不添加其他域名，然后通过修改配置文件，利用301重定向将不带www的域名指到带www的域名，如新网站的域名是www.goenjoychina.com，如果不配置一下，goenjoychina.com就访问不到，这样当然不好</p>
+<p>2.接着会让你输入网站的根路径，这里用默认的就好</p>
+<p>3.然后询问是运行Rewrite，这里最好写y，有些人可能不明白什么是Rewrite，这里的Rewrite表示的其实是URL Rewrite，也就是URL重写，作用就是将传入web的某个请求重定向到另一个URL，URL Rewrite最常用的用法就是URL伪静态，这个我在很多PHP框架中都见过，如ThinkPHP，它可以将动态页面显示未静态界面，wordpress也会使用这种技术</p>
+<p>进一步了解<a href="http://blog.csdn.net/shimiso/article/details/8594885" target="_blank" rel="external">URL Rewrite</a></p>
+<p>4.再下来就会问你是否开启访问日志，这个自己看情况考虑，有时差一些错误可以看log来解决，但是硬盘空间不是非常大的服务器就不建议开了，因为大多数时候是没必要的</p>
+<p>5.接着就是创建数据库了，这里要注意是Backspace是不会删去命令行中的字符的，所以写错了就从头配吧，感觉比数据库找回密码快很多</p>
+<p>6.到这里，就完成了虚拟机的创建了</p>
+<p>可以在/home/wwwroot/目录下看见你创建的虚拟主机</p>
+<h2 id="安装wordpress"><a href="#安装wordpress" class="headerlink" title="安装wordpress"></a>安装wordpress</h2><p>在安装wordpress前，建议将default文件中的一些敏感文件给删除，default这个文件夹是系统默认的，里面有一些信息，如phpmyadmin和探针（p.php），为了安全，建议上传这些东西，如p.php、phpinfo.php、index.html等等，然后将phpmyadmin文件夹改名，给一个不容易被猜到的名称，不然你的数据库被人爆了，你网站就费了，数据备份很重要</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%88%A0%E9%99%A4default%E5%86%85%E5%AE%B9.png" alt="删除default内容.png"></p>
+<p>修改完成后，我们进入刚刚创建的虚拟主机目录，通过ftp将将wordpress传到该目录下，建议传压缩包，这样传输速度回快一些，然后再在vps上进行解压则可，这里要注意的是，<strong>wordpress的文件要直接放到该虚拟主机的目录下</strong>，不然会报403错误</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/vps%E6%A0%B9%E7%9B%AE%E5%BD%95.png" alt="vps根目录.png"></p>
+<p>然后就是按部就班的安装wordpress了</p>
+<h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>这里没什么好说的，先购买域名是因为后面的步骤需要域名，我在GoDaddy上购买的，在这里购买的域名是免备案的，方便些，虽然贵一点<br><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20170531095807.png" alt="微信截图_20170531095807.png"></p>
+<p>然后在GoDaddy设置一下域名解析，将该域名解析到搬瓦工VPS对应的IP则可</p>
+<h2 id="安装wordpress-1"><a href="#安装wordpress-1" class="headerlink" title="安装wordpress"></a>安装wordpress</h2><p>此时通过域名进入wordpress的安装界面，然后一步步的安装，安装完后，就会出现一个界面，<strong>将后台密码和用户名设复杂一点</strong>，如果只是单纯的设置复杂点，其实还有点欠缺，因为可以通过脚本来跑字典，虽然比较难跑到你的密码，但是让你的服务器连接数据库查询登录密码是挺消耗资源的，这里一个比较好的方法就是通过Google验证码机制将恶意登录用户挡在门外，这样没有输入正确的验证码，就无法登录，虽然效果似乎一样，但是省了服务器连接数据库查询用户输入是否正确的过程</p>
+<p>Google验证码是目前我知道的最难搞的验证码，因为人有时都会弄错，感觉除了极其牛逼的人，很少有人能弄</p>
+<p>要使用Google验证码，首先要在<a href="https://www.google.com/recaptcha/intro/invisible.html" target="_blank" rel="external">Google reCAPTCHA</a>将你的网站注册，要使用这个，你就需要Google账号，这个就不多说了</p>
+<p>在Google reCAPTCHA为自己的网站申请相应的密钥<br><img src="http://obfs4iize.bkt.clouddn.com/%E6%B7%BB%E5%8A%A0%E9%AA%8C%E8%AF%81%E7%A0%81.png" alt="添加验证码.png"></p>
+<p>然后登录wordpress的后台，添加Google Captcha这个插件，该插件可以轻松的让你的wordpress网站使用Google验证码机制，你可以通过设置该插件的一些参数，让Google验证机制出现在不同的界面，如评论界面、登录界面，这样就可以减少恶意用户对你的网站造成的伤害<br><img src="http://obfs4iize.bkt.clouddn.com/google%E9%AA%8C%E8%AF%81.png" alt="google验证.png"></p>
+<p>如果想看一步步申请Google验证码的文章，可以看<a href="http://zfly9.blogspot.com/2015/07/20150703a.html" target="_blank" rel="external">教你如何使用Google的reCAPTCHA驗證碼keys申請</a></p>
+<h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><h3 id="插件无法直接下载安装"><a href="#插件无法直接下载安装" class="headerlink" title="插件无法直接下载安装"></a>插件无法直接下载安装</h3><p>因为你将wordpress搭建在centos上，所以就会有文件目录权限造成的问题，你需要给虚拟主机目录下的文件开启写权限，不然你无法直接通过wordpress后台在线安装插件，只能通过本地上传，就算你每次都通过本地上传再使用插件，有些优秀的插件也因为目录没有写权限而报错，我这里为www.goenjoychina.com目录下的所有文件都开放了写权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chown www:www -R /home/wwwroot/www.goenjoychina.com/*</div></pre></td></tr></table></figure></p>
+<h3 id="goenjoychina-com无法访问"><a href="#goenjoychina-com无法访问" class="headerlink" title="goenjoychina.com无法访问"></a>goenjoychina.com无法访问</h3><p>如果你没有修改过配置文件，goenjoychina.com是无法直接访问的，因为虚拟主机没有绑定goenjoychina.com这个域名，你可以通过修改该虚拟主机对应的conf文件来实现goenjoychina.com重定向到www.goenjoychina.com的功能</p>
+<p>lnmp集成环境下，配置文件默认位于<br>/usr/local/nginx/conf/vhost/ 目录下</p>
+<p>你可以通过vim把新的内容修改一下</p>
+<p>将<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">server_name www.goenjoychina.com;</div></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">server_name www.goenjoychina.com goenjoychina.com;</div><div class="line">if ($host != &apos;www.goenjoychina.com&apos; ) &#123; </div><div class="line">rewrite ^/(.*)$ http://www.goenjoychina.com/$1 permanent;&#125;</div></pre></td></tr></table></figure></p>
+<p>然后重启一下nginx就好了，在lnmp集成环境下，重启nginx的方法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/nginx reload</div></pre></td></tr></table></figure></p>
+<p>这里贴一下官方控制lnmp状态的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">LNMP状态管理命令：</div><div class="line"></div><div class="line">LNMP 1.2+状态管理: lnmp &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">LNMP 1.2+各个程序状态管理: lnmp &#123;nginx|mysql|mariadb|php-fpm|pureftpd&#125; &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">LNMP 1.1状态管理： /root/lnmp &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">Nginx状态管理：/etc/init.d/nginx &#123;start|stop|reload|restart&#125;</div><div class="line">MySQL状态管理：/etc/init.d/mysql &#123;start|stop|restart|reload|force-reload|status&#125;</div><div class="line">Memcached状态管理：/etc/init.d/memcached &#123;start|stop|restart&#125;</div><div class="line">PHP-FPM状态管理：/etc/init.d/php-fpm &#123;start|stop|quit|restart|reload|logrotate&#125;</div><div class="line">PureFTPd状态管理： /etc/init.d/pureftpd &#123;start|stop|restart|kill|status&#125;</div><div class="line">ProFTPd状态管理： /etc/init.d/proftpd &#123;start|stop|restart|reload&#125;</div><div class="line">Redis状态管理： /etc/init.d/redis &#123;start|stop|restart|kill&#125;</div><div class="line"></div><div class="line">如重启LNMP，1.2+输入命令：lnmp restart 即可；单独重启mysql：/etc/init.d/mysql restart 也可以 lnmp mysql restart ，两个是一样的。</div><div class="line"></div><div class="line">LNMPA状态管理命令：</div><div class="line"></div><div class="line">LNMPA 1.2+状态管理: lnmp &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">LNMPA 1.2+各个程序状态管理: lnmp &#123;httpd|mysql|mariadb|pureftpd&#125; &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">LNMPA1.1状态管理： /root/lnmpa &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">Nginx状态管理：/etc/init.d/nginx &#123;start|stop|reload|restart&#125;</div><div class="line">MySQL状态管理：/etc/init.d/mysql &#123;start|stop|restart|reload|force-reload|status&#125;</div><div class="line">Memcached状态管理：/etc/init.d/memcached &#123;start|stop|restart&#125;</div><div class="line">PureFTPd状态管理： /etc/init.d/pureftpd &#123;start|stop|restart|kill|status&#125;</div><div class="line">ProFTPd状态管理： /etc/init.d/proftpd &#123;start|stop|restart|reload&#125;</div><div class="line">Apache状态管理：/etc/init.d/httpd &#123;start|stop|restart|graceful|graceful-stop|configtest|status&#125;</div><div class="line"></div><div class="line">LAMP状态管理命令：</div><div class="line"></div><div class="line">LAMP 1.2+状态管理: lnmp &#123;start|stop|reload|restart|kill|status&#125;</div><div class="line">LAMP 1.2+各个程序状态管理: lnmp &#123;httpd|mysql|mariadb|pureftpd&#125; &#123;start|stop|reload|restart|kill|status&#125;</div></pre></td></tr></table></figure></p>
+<p>原内容在这里，<a href="https://lnmp.org/tag/%E9%87%8D%E5%90%AF/" target="_blank" rel="external">LNMP状态管理命令</a></p>
+<h3 id="wordpress只有一个主题"><a href="#wordpress只有一个主题" class="headerlink" title="wordpress只有一个主题"></a>wordpress只有一个主题</h3><p>刚安装完lnmp，我就发现wordpress只有一个主题，我通过ftp上传上去的新主题都没有显示，不明原因</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%8F%AA%E6%98%BE%E7%A4%BA%E4%B8%80%E4%B8%AA%E4%B8%BB%E9%A2%982.png" alt="只显示一个主题2.png"></p>
+<p>查了一下资料，方向lnmp将scandir方法禁用了，认为是危险函数，但是要显示多主题就必须要使用该函数，你可以修改/usr/local/php/etc下的php.ini，删去scandir就ok了</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%8F%AA%E6%98%BE%E7%A4%BA%E4%B8%80%E4%B8%AA%E4%B8%BB%E9%A2%98.png" alt="只显示一个主题.png"></p>
+<p>重启一下php-fpm，就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/php-fpm restart</div></pre></td></tr></table></figure></p>
+<p>此时显示出多主题的样子<br><img src="http://obfs4iize.bkt.clouddn.com/%E5%A4%9A%E4%B8%BB%E9%A2%98%E4%BA%86.png" alt="多主题了.png"></p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>到这里，一个wordpress网站就被搭建起来，但是也仅仅是搭建起来了，网站要搞起来，还是前面提过的4个重点：<strong>内容、布局、安全、速度</strong>，每个方面都可以讲的很深，我也刚刚入了个门，大家共勉！</p>
+<p>用代码创造乐趣—ayuliao</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/06/06/wordpress推荐安装的插件/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/28/网络是怎么传数据的/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

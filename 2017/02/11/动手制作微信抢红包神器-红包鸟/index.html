@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            动手制作微信抢红包神器---红包鸟 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",android">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="动手制作微信抢红包神器---红包鸟 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="android"> 
+
+    
+        <meta property="article:published_time" content="Sat Feb 11 2017 09:16:30 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Feb 14 2017 11:25:27 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="动手制作微信抢红包神器---红包鸟 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "动手制作微信抢红包神器---红包鸟",
+    "url": "http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html",
+    "datePublished": "Sat Feb 11 2017 09:16:30 GMT+0800",
+    "dateModified": "Tue Feb 14 2017 11:25:27 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#效果"><span class="post-toc-number">2.</span> <span class="post-toc-text">效果</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思路"><span class="post-toc-number">3.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#讲讲AccessibilityService"><span class="post-toc-number">4.</span> <span class="post-toc-text">讲讲AccessibilityService</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模拟抢红包"><span class="post-toc-number">5.</span> <span class="post-toc-text">模拟抢红包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体实现步骤"><span class="post-toc-number">6.</span> <span class="post-toc-text">具体实现步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#准备AccessibilityService类"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">准备AccessibilityService类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#情况一和情况四的实现代码"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">情况一和情况四的实现代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#情况二对应的代码"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">情况二对应的代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#情况三对应的代码"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">情况三对应的代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                动手制作微信抢红包神器---红包鸟
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>2月 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=动手制作微信抢红包神器---红包鸟&url=http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=动手制作微信抢红包神器---红包鸟&url=http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/02/11/动手制作微信抢红包神器-红包鸟/index.html&title=动手制作微信抢红包神器---红包鸟" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>自从微信推出抢红包功能后，市面上相应出现了微信抢红包软件，而且红极一时，你可以在Google上搜索到很多讲解微信红包软件的文章，但是这些文章都如蜻蜓点水，只讲解了最简单的情况下抢红包的实现思路，本篇文章建立在其他微信抢红包软件的文章只上，讲讲比较复杂的场景下快速抢到红包，如手机息屏时抢到红包、屏蔽微信群消失时抢到红包等等</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>首先来看一下实现后的效果，项目名字叫做红包鸟</p>
+<p>首先开启红包鸟的辅助功能选项</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%BC%80%E5%90%AF%E7%BA%A2%E5%8C%85%E9%B8%9F%E7%9A%84%E8%BE%85%E5%8A%A9%E6%9C%8D%E5%8A%A1.gif" alt="开启红包鸟的辅助服务.gif"></p>
+<p>四种情况下的抢红包：<br>1.不在微信聊天界面收到微信的状态栏提示时，抢红包<br><img src="http://obfs4iize.bkt.clouddn.com/%E6%8A%A2%E9%80%9A%E7%9F%A5%E6%A0%8F%E7%BA%A2%E5%8C%85.gif" alt="抢通知栏红包.gif"></p>
+<p>2.在当前聊天界面时，抢红包</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%8A%A2%E6%AD%A3%E5%9C%A8%E8%81%8A%E5%A4%A9%E7%95%8C%E9%9D%A2%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E7%BA%A2%E5%8C%85.gif" alt="抢正在聊天界面中出现的红包.gif"></p>
+<p>3.微信群消息被屏蔽时，抢红包</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%8A%A2%E8%AE%BE%E7%BD%AE%E4%BA%86%E5%85%8D%E6%89%93%E6%89%B0%E7%9A%84%E7%BA%A2%E5%8C%85.gif" alt="抢设置了免打扰的红包.gif"></p>
+<p>4.没有设置锁屏密码，手机息屏时抢红包</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%8A%A2%E6%97%A0%E5%AF%86%E7%A0%81%E9%94%81%E5%B1%8F%E7%9A%84%E7%BA%A2%E5%8C%85.gif" alt="抢无密码锁屏的红包.gif"></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>实现红包鸟，一开始有两个大致的思路，一就是监听微信的网络请求数据，将接受到红包的请求数据辨别出来，然后在进行相应的抢红包操作，后面通过抓包软件抓包发现数据都是加密的，这样是意料之中的事情，毕竟一个国民级应用，在网络数据安全性上还是会有一定的考虑的，不然自己的聊天消息随随便便就被人监听就太欠缺了，所以就有了第二个思路，模拟用户抢红包，就像PC端的按键精灵将用户的鼠标点击都记录下来，生成对应的脚本，然后就可以重复用户点击，我的第一个反应是Monkey（一个用于Android测试的工具），但是Android上有AccessibilityService这个更优雅的解决方式，市面上几乎所有的微信抢红包神器都是使用这个类来实现的</p>
+<h2 id="讲讲AccessibilityService"><a href="#讲讲AccessibilityService" class="headerlink" title="讲讲AccessibilityService"></a>讲讲AccessibilityService</h2><p>AccessibilityService是Google为了让Android系统更加易用，而为用户提供的无障碍辅助服务，该服务主要用于帮助身体有缺陷的用户（残疾、失明）来使用Android系统，它可以监听界面变化的事件，模拟用户的操作</p>
+<p>AccessibilityService运行在后台，需要用户手动开启（因为这个功能太吊了），界面中的任何变化都会产生一个事件然后由系统发送给AccessibilityService，我们通过对不同事件的判断，构建AccessibilityNodeInfo类对象来模拟用户的操作，如点击、长按、滑动等等</p>
+<p>本篇文章不会讲太多基础知识，大家可以看<a href="http://www.jianshu.com/p/4cd8c109cdfb" target="_blank" rel="external">你真的理解AccessibilityService吗</a>这篇文章，或者自己Google更多的相关文章，其实并不难懂</p>
+<h2 id="模拟抢红包"><a href="#模拟抢红包" class="headerlink" title="模拟抢红包"></a>模拟抢红包</h2><p>在抢红包时，用户是怎么抢，红包鸟就怎么抢，它有多种情况，如下</p>
+<p>情况一：用户不在微信的聊天界面，而在其他界面，这时微信会有通知栏通知<br>我所说的微信聊天界面<br><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E7%95%8C%E9%9D%A2.jpg" alt="微信聊天界面.jpg"></p>
+<p>那么红包鸟抢红包的步骤就是：<br>1.通过AccessibilityService服务获知Android通知栏发生了变化<br>2.获得通知栏中的内容<br>3.判断是否有“[微信红包]”这四个字<br>4.如果有就通过状态栏进入微信中相应的聊天界面<br>5.通过查找界面中“领取红包”或者“查看红包”这几个字来找到红包<br>6.模拟点击红包，进行领取</p>
+<p>情况二：用户在微信聊天界面，这是有这个界面的消息，微信是不会通过通知栏提示的<br>那么红包鸟抢红包的步骤就是：<br>1.通过AccessibilityService服务获知微信界面滚动（新消息来了，界面会滚动）<br>2.判断是不是红包<br>3.是红包就模拟点击红包，进行领取</p>
+<p>情况三：用户在微信列表，并将该群设为消息免扰，那么微信同样不会通过通知栏提示<br>我所说的微信列表</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%88%97%E8%A1%A8.png" alt="微信列表"></p>
+<p>那么红包鸟抢红包的步骤就是：<br>1.通过AccessibilityService服务获知微信界面内容变化<br>2.判断界面中是否有“[微信红包]”这四个字<br>3.有则点击微信列表中的这个Item，进入聊天界面<br>4.通过查找界面中“领取红包”或者“查看红包”这几个字来找到红包<br>5.模拟点击红包，进行领取</p>
+<p>如果你屏蔽了该群的消息，有不在微信列表，红包鸟就抢不到红包</p>
+<p>情况四：用户没有设置消息免扰，手机息屏，此时微信通过通知栏来点亮屏幕，提醒用户有新信息</p>
+<p>那么红包鸟抢红包的步骤就是：<br>1.通过AccessibilityService服务获知Android通知栏发生了变化<br>2.判断通知栏内容是否包含“[微信红包]”这四个字<br>3.如果有，则双击通知栏，进入微信聊天界面<br>4.模拟点击，进行抢红包</p>
+<p>如果你屏蔽了该群，那么手机息屏时，微信就不会通过通知栏点亮屏幕对用户进行通知，这时红包鸟是抢不到红包的</p>
+<p>你可以将红包鸟想象成另外一个你，你能抢的红包，它就能抢而且手速比你快，但是你不能抢的，比如因为屏蔽了群，你在玩其他的东西，你都不知道有红包发过来了，红包鸟也抢不了</p>
+<h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h3 id="准备AccessibilityService类"><a href="#准备AccessibilityService类" class="headerlink" title="准备AccessibilityService类"></a>准备AccessibilityService类</h3><p>首先在AndroidManifest文件中声明一个继承AccessibilityService类的服务，如下<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">service</span></span></div><div class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">".server.GetMemoryServer"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:enabled</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"android.permission.BIND_ACCESSIBILITY_SERVICE"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.accessibilityservice.AccessibilityService"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"android.accessibilityservice"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:resource</span>=<span class="string">"@xml/get_memory_config"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这个service需要android.permission.BIND_ACCESSIBILITY_SERVICE权限才可以使用，而且还需要将intent-filter中的action设置为android.accessibilityservice.AccessibilityService，对系统意图进行过滤，接着配置meta-data标签，通过xml文件来实现对GetMemoryServer类的配置</p>
+<p>上面的代码，处理meta-data标签中的的resource属性可以更改，其他都不能改动，错一个字母，自动的AccessibilityService服务就无法生效</p>
+<p>接着看到xml文件中的get_memory_config.xml配置文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">accessibility-service</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:accessibilityEventTypes</span>=<span class="string">"typeAllMask"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:accessibilityFeedbackType</span>=<span class="string">"feedbackGeneric"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:accessibilityFlags</span>=<span class="string">""</span></span></div><div class="line"><span class="tag">    <span class="attr">android:canRetrieveWindowContent</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:description</span>=<span class="string">"@string/description"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:notificationTimeout</span>=<span class="string">"100"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:packageNames</span>=<span class="string">"com.tencent.mm"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<p>accessibilityEventTypes：表示无障碍服务监听界面中的哪些变化，如窗口打开、滑动、控件焦点变化等<br>accessibilityFeedbackType：表示反馈方式<br>canRetrieveWindowContent：无障碍服务是否可以获得窗口中的内容<br>notificationTimeout：接受事件的间隔时间<br>packageNames：指定该服务需要监听那个包产生的事件</p>
+<p>接着创建一个类来继承AccessibilityService类，实现其中onAccessibilityEvent()方法和onInterrupt()方法，代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GetMemoryServer</span> <span class="keyword">extends</span> <span class="title">AccessibilityService</span> </span>&#123;</div><div class="line">	 <span class="comment">/**</span></div><div class="line"><span class="comment">     *  必须重写的方法：此方法用了接受系统发来的event。</span></div><div class="line"><span class="comment">     *  在你注册的event发生是被调用。在整个生命周期会被调用多次。</span></div><div class="line"><span class="comment">    <span class="doctag">@Override</span></span></div><div class="line"><span class="comment">    public void onAccessibilityEvent(AccessibilityEvent event) &#123;&#125;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">     /**</span></div><div class="line"><span class="comment">     *  必须重写的方法：系统要中断此service返回的响应时会调用。</span></div><div class="line"><span class="comment">     *  在整个生命周期会被调用多次。</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onInterrupt</span><span class="params">()</span> </span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>onAccessibilityEvent()方法用于接收在配置文件中（get_memory_config.xml文件中）设置该服务可以监听的事件，红包鸟大部分逻辑都是在该方法中实现的</p>
+<p>更多AccessibilityService的内容可以查阅官方文档<a href="https://developer.android.com/reference/android/accessibilityservice/AccessibilityServiceInfo.html" target="_blank" rel="external">点这里</a></p>
+<h3 id="情况一和情况四的实现代码"><a href="#情况一和情况四的实现代码" class="headerlink" title="情况一和情况四的实现代码"></a>情况一和情况四的实现代码</h3><p>首先在onAccessibilityEvent()方法中获得事件类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> eventType = event.getEventType();</div></pre></td></tr></table></figure></p>
+<p>然后通过switch来区分不同的事件，对不同的事件实现不同逻辑</p>
+<p>情况一和情况四实现的具体代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED:</div><div class="line">    Log.e(<span class="string">"ayu_change"</span>, <span class="string">"TYPE_NOTIFICATION_STATE_CHANGED"</span>);</div><div class="line">    List&lt;CharSequence&gt; texts = event.getText();</div><div class="line">    <span class="keyword">if</span> (!texts.isEmpty()) &#123;</div><div class="line">        <span class="keyword">for</span> (CharSequence text : texts) &#123;</div><div class="line">            String content = text.toString();</div><div class="line">            <span class="keyword">if</span> (content.contains(<span class="string">"[微信红包]"</span>)) &#123;</div><div class="line">                <span class="comment">//如果此时屏幕是锁屏时，没有密码的锁屏</span></div><div class="line">                <span class="keyword">boolean</span> isLock = isScreenLocked2();</div><div class="line">                <span class="keyword">if</span> (isLock) &#123;</div><div class="line">                    <span class="comment">//解锁</span></div><div class="line">                    AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();</div><div class="line">                    List&lt;AccessibilityNodeInfo&gt; infos = nodeInfo.findAccessibilityNodeInfosByViewId(<span class="string">"com.android.keyguard:id/notification_title_view"</span>);</div><div class="line">                    <span class="keyword">if</span>(infos.size()==<span class="number">0</span>||infos==<span class="keyword">null</span>)&#123;</div><div class="line">                        <span class="keyword">return</span>;</div><div class="line">                    &#125;</div><div class="line">                    AccessibilityNodeInfo info = infos.get(<span class="number">0</span>);</div><div class="line">                    AccessibilityNodeInfo parent = info.getParent();</div><div class="line">                    <span class="keyword">while</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="comment">//如父元素也可点击</span></div><div class="line">                        <span class="keyword">if</span> (parent.isClickable()) &#123;</div><div class="line">                            <span class="comment">//就添加到parents中</span></div><div class="line">                            firstIn = <span class="keyword">true</span>;</div><div class="line">                            parent.performAction(AccessibilityNodeInfo.ACTION_CLICK);</div><div class="line">                            parent.performAction(AccessibilityNodeInfo.ACTION_CLICK);</div><div class="line">                            <span class="keyword">break</span>;</div><div class="line">                        &#125;</div><div class="line">                            <span class="comment">//再上一parent</span></div><div class="line">                            parent = parent.getParent();</div><div class="line">                        &#125;</div><div class="line">                        <span class="keyword">return</span>;</div><div class="line">                    &#125;<span class="keyword">else</span></div><div class="line">                    &#123;</div><div class="line">                    <span class="keyword">if</span> (isFromChatList) &#123;</div><div class="line">                        isFromChatList = <span class="keyword">false</span>;</div><div class="line">                        <span class="keyword">return</span>;</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">//模拟打开通知栏消息，即打开微信</span></div><div class="line">                              </div><div class="line">                    <span class="keyword">if</span> (event.getParcelableData() != <span class="keyword">null</span> &amp;&amp;</div><div class="line">                            event.getParcelableData() <span class="keyword">instanceof</span> Notification) &#123;</div><div class="line">                        Notification notification = (Notification) event.getParcelableData();</div><div class="line">                        </div><div class="line">                        PendingIntent pendingIntent = notification.contentIntent;</div><div class="line">               			<span class="keyword">try</span> &#123;</div><div class="line">                            getMemory = <span class="keyword">true</span>;</div><div class="line">                            isFromNotification = <span class="keyword">true</span>;</div><div class="line">                            pendingIntent.send();</div><div class="line">                            Log.d(<span class="string">"ayuLiao"</span>, <span class="string">"进入微信"</span>);</div><div class="line">                            &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                                e.printStackTrace();</div><div class="line">                                Log.d(<span class="string">"ayuLiao"</span>, <span class="string">"从Notification跳转失败"</span>);</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<p>事件类型为TYPE_NOTIFICATION_STATE_CHANGED，表示手机的通知栏有变化，这样就可以通过AccessibilityEvent类的getText()方法获得CharSequence类的数据集，CharSequence就是字符序列,String 继承于CharSequence，也就是获得通知栏中的内容，如果有[微信红包]这几个字，判断通过isScreenLocked2()方法判断手机是否在息屏状态，在没有设置微信无法使用通知栏的情况下，如果手机息屏，微信将会把屏幕点亮，此事需要通过AccessibilityNodeInfo类对象获得这个通知栏，然后调用performAction()方法模拟点击两次，就可以解开首先息屏，进入微信了，如果手机没有息屏，则直接获得Notification类对象，然后同Notification类的contentIntent进入对应的界面</p>
+<p>可以通过uiautomatorviewer工具来获得手机界面的布局，这个工具可以从Android Studio的DDMS中开启</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E7%BA%A2%E5%8C%85DDMS.png" alt="红包DDMS.png"></p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/uiautomatorviewer.png" alt="uiautomatorviewer.png"></p>
+<p>然后分析手机界面，通过分析获得布局中关键控件的id</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%89%8B%E6%9C%BA%E6%81%AF%E5%B1%8F%E8%8E%B7%E5%BE%97id.png" alt="手机息屏获得id.png"></p>
+<p>然后使用AccessibilityNodeInfo类的findAccessibilityNodeInfosByViewId()方法通过id来找到相应的控件，这里我们找标题的id，因为每次微信通知栏提醒都会有标题，但是标题不可点击，所以获得其可以点击的父元素，进行双击，破除手机息屏，进入微信</p>
+<p>来看isScreenLocked2()方法，使用该方法来判断手机是否息屏<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isScreenLocked2</span><span class="params">()</span> </span>&#123;</div><div class="line">        KeyguardManager mKeyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);</div><div class="line">        <span class="keyword">boolean</span> flag = mKeyguardManager.inKeyguardRestrictedInputMode();</div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>如果返回的值为true，表示有有两种状态：a、屏幕是黑的  b、目前正处于解锁状态<br>如果返回的值为false，表示目前未锁屏</p>
+<p>还可以通过PowerManager类或者接收系统锁屏广播的形式来判断手机是否息屏，具体可以参考<a href="http://blog.csdn.net/heroxuetao/article/details/24639203" target="_blank" rel="external">Android判断屏幕锁屏的方法总结</a></p>
+<p>当我们通过通知栏进入微信相应的聊天界面时，onAccessibilityEvent()方法就会接收到TYPE_WINDOW_STATE_CHANGED类型的事件，表示窗口类型发生变化，来看一下该类型下的具体代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">          * 直接中聊天列表界面进入聊天详情界面，不会触发TYPE_WINDOW_STATE_CHANGED</span></div><div class="line"><span class="comment">          */</span></div><div class="line">         <span class="keyword">case</span> AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED:</div><div class="line">             Log.e(<span class="string">"ayu_change"</span>,<span class="string">"TYPE_WINDOW_STATE_CHANGED"</span>);</div><div class="line">             String className = event.getClassName().toString();</div><div class="line">             <span class="comment">//进入聊天界面</span></div><div class="line">             <span class="keyword">if</span> (className.equals(<span class="string">"com.tencent.mm.ui.LauncherUI"</span>)) &#123;</div><div class="line">                 <span class="comment">//点击最后一个红包</span></div><div class="line">                 Log.e(<span class="string">"demo"</span>,<span class="string">"点击红包"</span>);</div><div class="line">                 <span class="comment">//从Notification进入该界面</span></div><div class="line">                 <span class="keyword">if</span>(isFromNotification)&#123;</div><div class="line">                     isFromNotification = <span class="keyword">false</span>;</div><div class="line">                     <span class="comment">/**</span></div><div class="line"><span class="comment">                      * 如果从Notification进入，就获得界面的中红包的节点，打开最后一个红包则可，</span></div><div class="line"><span class="comment">                      * 因为Notification提醒了，就一定有红包</span></div><div class="line"><span class="comment">                      */</span></div><div class="line">                     getLastPacket();</div><div class="line">                 &#125;</div><div class="line">                 <span class="keyword">if</span>(firstIn)&#123;</div><div class="line">                     firstIn = <span class="keyword">false</span>;</div><div class="line">                     AccessibilityNodeInfo root = getRootInActiveWindow();</div><div class="line">                     getListViewLastMemory2(event, root);</div><div class="line">                 &#125;</div><div class="line">             &#125; <span class="keyword">else</span> <span class="keyword">if</span> (className.equals(<span class="string">"com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyReceiveUI"</span>)) &#123;</div><div class="line">                 <span class="comment">//开红包</span></div><div class="line">                 Log.e(<span class="string">"demo"</span>,<span class="string">"开红包"</span>);</div><div class="line">                 <span class="comment">//com.tencent.mm:id/bi3点击红包对应的id，不同版本的微信有所不同</span></div><div class="line">                 AccessibilityNodeInfo Receiveroot = getRootInActiveWindow();</div><div class="line"></div><div class="line">                 List&lt;AccessibilityNodeInfo&gt; infos = Receiveroot.findAccessibilityNodeInfosByText(<span class="string">"手慢了，红包派完了"</span>);</div><div class="line">                 <span class="keyword">if</span>(infos.size()==<span class="number">0</span>||infos==<span class="keyword">null</span>)&#123;<span class="comment">//红包中还有前，有开字</span></div><div class="line">                     <span class="keyword">if</span>(getMemory) &#123;</div><div class="line">                         inputClick(<span class="string">"com.tencent.mm:id/bi3"</span>);</div><div class="line">                         isnomenory = <span class="keyword">false</span>;</div><div class="line">                         hongbaoNum = sharedPerferenceUtil.getInteger(HONBBO_SHU, hongbaoNum);</div><div class="line">                         hongbaoNum++;</div><div class="line">                         sharedPerferenceUtil.putInteger(HONBBO_SHU,hongbaoNum);</div><div class="line">                         getMemory = <span class="keyword">false</span>;</div><div class="line">                     &#125;</div><div class="line">                 &#125;<span class="keyword">else</span>&#123;</div><div class="line">                     inputClick(<span class="string">"com.tencent.mm:id/bfu"</span>);</div><div class="line">                     isnomenory = <span class="keyword">true</span>;</div><div class="line">                 &#125;</div><div class="line"></div><div class="line"></div><div class="line">             &#125; <span class="keyword">else</span> <span class="keyword">if</span> (className.equals(<span class="string">"com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyDetailUI"</span>)) &#123;</div><div class="line">                 <span class="comment">//退出红包</span></div><div class="line">                 Log.e(<span class="string">"demo"</span>,<span class="string">"退出红包"</span>);</div><div class="line">                     inputClick(<span class="string">"com.tencent.mm:id/gv"</span>);</div><div class="line">             &#125;</div><div class="line">             <span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<p>在该case下，我们判断了3个不同的界面对应的类的名称，以此来区分在哪个界面<br>我们可以通过一些开发者APP来实现类的查看，这里我使用的是“开发者助手”这款良心APP</p>
+<p>com.tencent.mm.ui.LauncherUI：表示聊天窗口，其实聊天列表窗口也是这个类</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%97%E5%88%B0%E5%BE%AE%E4%BF%A1%E4%B8%AD%E7%9A%84%E7%B1%BB.jpg" alt="得到微信中的类.jpg"></p>
+<p>com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyReceiveUI：表示点击开红包的界面</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%97%E5%88%B0%E5%BE%AE%E4%BF%A1%E4%B8%AD%E7%9A%84%E7%B1%BB2.jpg" alt="得到微信中的类2"></p>
+<p>com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyDetailUI：表示开完红包后的详情界面</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%BE%97%E5%88%B0%E5%BE%AE%E4%BF%A1%E4%B8%AD%E7%9A%84%E7%B1%BB1.jpg" alt="得到微信中的类1"></p>
+<p>对应不同的界面，要做不同的逻辑处理，因为每次界面变换都会触发TYPE_WINDOW_STATE_CHANGED类型的事件，所以将这些逻辑都写在这个case内</p>
+<p>这里简单来讲讲其中的逻辑<br>如果类名为com.tencent.mm.ui.LauncherUI，那么就有两种可能，一是从Notification通知栏进入该界面的，二是从聊天列表界面进入的，所以需要分开来处理，从通知栏直接进入的，说明一定是有新红包了，所以就调用getLastPacket()方法模拟点击该界面中最后也就是最新的红包，如果是从聊天列表中进入的，就通过firstIn来判断是否是红包鸟模拟点击进入的还是用户自己进入的，如果红包鸟模拟点击进入的就调用getListViewLastMemory2()方法，该方法会判断聊天界面中最新的内容是否为红包，如果是，再次调用getLastPacket()方法模拟点击红包</p>
+<p>模拟点击完红包，就会进入的界面的类名就为com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyReceiveUI，进入该界面，同样会有两种情况，一是红包抢完了，可以通过查找界面中是否拥有“手慢了，红包派完了”的字眼，如果有就说明红包已经抢完了，调用inputClick()方法，传入关闭控件的id，模拟点击该控件，如果有红包，就通过id找到开红包的控件，然后将红包的数量添加到sharedPerference中，用于显示红包鸟总共帮用户抢到多少个红包，这里获得控件id的方式更上面一样</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%89%8B%E6%85%A2%E4%BA%86.png" alt="手慢了"></p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%88%86%E6%9E%90%E7%BA%A2%E5%8C%85%E5%B8%83%E5%B1%80.png" alt="分析红包布局.png"></p>
+<p>如果有钱，那么抢完红包就会进入类名就为出com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyDetailUI的界面，同样通过id找到退出该界面的控件模拟点击则可</p>
+<h3 id="情况二对应的代码"><a href="#情况二对应的代码" class="headerlink" title="情况二对应的代码"></a>情况二对应的代码</h3><p>因为本身就在聊天界面中，微信是不会再通过通知栏来提示用户有新消息，所以我就需要直接通过GetMemoryServer服务来监听界面滚动事件，因为聊天时，每次有新的内容出现，都会有滚动事件的发生，先看具体的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//窗口滚动时</span></div><div class="line">            <span class="keyword">case</span> AccessibilityEvent.TYPE_VIEW_SCROLLED:</div><div class="line">                Log.e(<span class="string">"ayu_change"</span>,<span class="string">"TYPE_VIEW_SCROLLED"</span>);</div><div class="line">                AccessibilityNodeInfo root = getRootInActiveWindow();</div><div class="line">                <span class="keyword">if</span>(root==<span class="keyword">null</span>)&#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//获得聊天界面的返回按钮</span></div><div class="line">                List&lt;AccessibilityNodeInfo&gt; exitNodeInfos = root.findAccessibilityNodeInfosByViewId(<span class="string">"com.tencent.mm:id/gf"</span>);</div><div class="line">                <span class="comment">//确认该界面是聊天界面</span></div><div class="line">                <span class="keyword">if</span> (exitNodeInfos != <span class="keyword">null</span> &amp;&amp; exitNodeInfos.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">                    getListViewLastMemory(event, root);</div><div class="line">                    <span class="keyword">if</span>(firstIn)&#123;</div><div class="line">                        firstIn = <span class="keyword">false</span>;</div><div class="line">                        getListViewLastMemory2(event, root);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div></pre></td></tr></table></figure>
+<p>在onAccessibilityEvent()方法监听到界面滚动事件时，首先判断是否在微信聊天界面，这里不可以通过上面类名的方式来判断，因为聊天列表和聊天界面的类名是相同的，这里通过判断该界面中是否存在返回键来判断此界面是微信聊天界面</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%88%A4%E6%96%AD%E5%9C%A8%E8%81%8A%E5%A4%A9%E7%95%8C%E9%9D%A2.png" alt="判断在聊天界面.png"></p>
+<p>如果是聊天界面，就调用getListViewLastMemory()方法，在该方法中，会判断屏幕滑动事件中的Item数，如果Item数增大了，说明有新消息来了，判断该消息是否为红包，如果是就调用getLastPacket()方法进行抢红包，如果没变，可能就是用户在翻看前面的聊天信息，此时不做处理</p>
+<p>这样还通过firstIn变量来判断是否是红包鸟模拟点击聊天列表进来的，因为用户可能屏蔽了群消息，这样就只能判断聊天列表中是否有相应的提示来进入聊天界面，此时屏幕滑动事件中的Item数可能不会改变了，所以调用getListViewLastMemory2()方法来获得红包，点击红包后就会进入TYPE_WINDOW_STATE_CHANGED，然后跟上面代码一样，点击开红包和退出</p>
+<h3 id="情况三对应的代码"><a href="#情况三对应的代码" class="headerlink" title="情况三对应的代码"></a>情况三对应的代码</h3><p>如果用户设置该群为免打扰，那么就只能判断聊天列表中是否有“微信红包”的字眼来判断了，每次界面内容改变时，都对界面的内容搜索一次，以此来判断，具体代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED:</div><div class="line">                Log.e(<span class="string">"ayu_change"</span>,<span class="string">"TYPE_WINDOW_CONTENT_CHANGED"</span>);</div><div class="line">                AccessibilityNodeInfo Listroot = getRootInActiveWindow();</div><div class="line">                <span class="keyword">if</span>(Listroot==<span class="keyword">null</span>)&#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(isnomenory)&#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//获得聊天界面的返回按钮</span></div><div class="line">                List&lt;AccessibilityNodeInfo&gt; back = Listroot.findAccessibilityNodeInfosByViewId(<span class="string">"com.tencent.mm:id/gf"</span>);</div><div class="line">                <span class="comment">//确认该界面是聊天界面</span></div><div class="line">                <span class="keyword">if</span> (back != <span class="keyword">null</span> &amp;&amp; back.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">//获得聊天列表中的ListView</span></div><div class="line">                List&lt;AccessibilityNodeInfo&gt; chatListInfos = Listroot.findAccessibilityNodeInfosByViewId(<span class="string">"com.tencent.mm:id/bjx"</span>);</div><div class="line">                <span class="comment">//判断是否在聊天列表</span></div><div class="line">                <span class="keyword">if</span> (chatListInfos != <span class="keyword">null</span> &amp;&amp; chatListInfos.size() &gt; <span class="number">0</span>) &#123;</div><div class="line">                    <span class="comment">//获得第一个</span></div><div class="line">                    AccessibilityNodeInfo nodeInfo = chatListInfos.get(<span class="number">0</span>);</div><div class="line">                    <span class="comment">//获得聊天列表中详细内容的信息</span></div><div class="line">                    List&lt;AccessibilityNodeInfo&gt; getRedMoneyList = nodeInfo.findAccessibilityNodeInfosByViewId(<span class="string">"com.tencent.mm:id/afc"</span>);</div><div class="line">                    <span class="keyword">for</span>(AccessibilityNodeInfo info : getRedMoneyList)&#123;</div><div class="line">                        <span class="keyword">if</span>(info.toString().contains(<span class="string">"[微信红包]"</span>))&#123;</div><div class="line">                            AccessibilityNodeInfo parent = info.getParent();</div><div class="line">                            <span class="keyword">while</span> (parent != <span class="keyword">null</span>) &#123;</div><div class="line">                                <span class="comment">//如父元素也可点击</span></div><div class="line">                                <span class="keyword">if</span> (parent.isClickable()) &#123;</div><div class="line">                                    <span class="comment">//就添加到parents中</span></div><div class="line">                                    firstIn = <span class="keyword">true</span>;</div><div class="line">                                    isFromChatList = <span class="keyword">true</span>;</div><div class="line"><span class="comment">//                                    SystemClock.sleep(200);</span></div><div class="line">                                    parent.performAction(AccessibilityNodeInfo.ACTION_CLICK);</div><div class="line">                                    <span class="keyword">break</span>;</div><div class="line">                                &#125;</div><div class="line">                                <span class="comment">//再上一parent</span></div><div class="line">                                parent = parent.getParent();</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div></pre></td></tr></table></figure>
+<p>界面内容改变会触发TYPE_WINDOW_CONTENT_CHANGED类型的事件，这里只监听聊天列表中的内容是否改变，因为就算用户屏蔽了该群，相应的信息还是会显示聊天列表中，但是这里还需要考虑，就是用户没有屏蔽该群，这里依旧会监听到内容中有“微信红包”而进行模拟点击，但是因为用户没有屏蔽，所以还会有通知栏通知，通过打印可知，内容改变的事件先被接受，但是为了避免最新的红包被抢两次，所以要通过一些变量进行判断</p>
+<p>上段代码的核心逻辑其实非常简单，先判断界面是否是聊天界面，通过该界面是否包含特定的ListView控件来判断</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%88%A4%E6%96%AD%E8%81%8A%E5%A4%A9%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84ListView.png" alt="判断聊天列表中的ListView.png"></p>
+<p>接着通过ID获得聊天列表中不同Item中的内容</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E8%81%8A%E5%A4%A9%E5%88%97%E8%A1%A8%E7%9A%84%E5%86%85%E5%AE%B9.png" alt="聊天列表的内容.png"></p>
+<p>判断内容中是否包含了“[微信红包]”，如果包含，就找到该内容可以点击的父元素，进行模拟点击，这样就可以进入聊天界面中了，新的内容会让界面滚动，而触发TYPE_VIEW_SCROLLED类型的事件，所以后面的逻辑又回到TYPE_VIEW_SCROLLED这个case中</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里核心的逻辑已经讲解完了，其实这个项目不难，就是需要耐心分析微信的界面和微信对用户不同的操作会有什么做法</p>
+<p>对于AccessibilityService产生的不同事件最好都写上相应的Log提示，这样在编写项目时会清楚这些监听事件的触发顺序</p>
+<p>红包鸟的代码已经上传到github，地址如下<br><a href="https://github.com/ayuLiao/Get_Memory" target="_blank" rel="external">https://github.com/ayuLiao/Get_Memory</a></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/02/12/穿越手册-如何回到过去成为主角/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/06/做一个比较完整的微信小程序-二/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

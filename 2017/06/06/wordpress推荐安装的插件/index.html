@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            wordpress推荐安装的插件 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",wordpress">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="wordpress推荐安装的插件 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="wordpress"> 
+
+    
+        <meta property="article:published_time" content="Tue Jun 06 2017 10:16:44 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Jun 07 2017 16:28:56 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="wordpress推荐安装的插件 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "wordpress推荐安装的插件",
+    "url": "http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html",
+    "datePublished": "Tue Jun 06 2017 10:16:44 GMT+0800",
+    "dateModified": "Wed Jun 07 2017 16:28:56 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是插件"><span class="post-toc-number">2.</span> <span class="post-toc-text">什么是插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Akismet-Anti-Spam"><span class="post-toc-number">3.</span> <span class="post-toc-text">Akismet Anti-Spam</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#All-in-One-SEO"><span class="post-toc-number">4.</span> <span class="post-toc-text">All in One SEO</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Contact-Form-7"><span class="post-toc-number">5.</span> <span class="post-toc-text">Contact Form 7</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Kindeditor-For-Wordpress"><span class="post-toc-number">6.</span> <span class="post-toc-text">Kindeditor For Wordpress</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Relevanssi"><span class="post-toc-number">7.</span> <span class="post-toc-text">Relevanssi</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UpdraftPlus-Backup-Restore"><span class="post-toc-number">8.</span> <span class="post-toc-text">UpdraftPlus - Backup/Restore</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WP-Authenticity-Checker-WAC"><span class="post-toc-number">9.</span> <span class="post-toc-text">WP Authenticity Checker (WAC)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WP-Cerber"><span class="post-toc-number">10.</span> <span class="post-toc-text">WP Cerber</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BulletProof-Security"><span class="post-toc-number">11.</span> <span class="post-toc-text">BulletProof Security</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WP-Fastest-Cache"><span class="post-toc-number">12.</span> <span class="post-toc-text">WP Fastest Cache</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WP-Super-Cache"><span class="post-toc-number">13.</span> <span class="post-toc-text">WP Super Cache</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                wordpress推荐安装的插件
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>6月 06, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/wordpress/">wordpress</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=wordpress推荐安装的插件&url=http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=wordpress推荐安装的插件&url=http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/06/06/wordpress推荐安装的插件/index.html&title=wordpress推荐安装的插件" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>为了搭建出一个比较OK的英文网站，经过我几天的摸索和实际，觉得应该总结一下这几天看到的东西，记录一下觉得很OK的插件</p>
+<h2 id="什么是插件"><a href="#什么是插件" class="headerlink" title="什么是插件"></a>什么是插件</h2><p>如果你也是用wordpress搭建一个网站，却没有使用功能强大的插件，那真的太可惜了，利用好一些优秀的插件，可以提高你网站的搜索排名和优化你网站的内部结构（在一些网站上也将插件称为外挂）。</p>
+<p>wordpress的插件都会放到下面的目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\wp-content\plugins</div></pre></td></tr></table></figure></p>
+<p>一般有两种方法来安装插件，一种就是通过在线安装，这种方法的好处就是简单，但是如果你的服务器在国内，在线安装会显得非常的慢，而且在线安装界面会比较卡，这让人很不爽</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/Addplugins.png" alt="Addplugins"></p>
+<p>另外一种方法就是在网上下载好，然后将同名的文件夹解压放到该目录下，我常用这种方法下载一下破解的付费插件，体验一下付费插件是否有那么牛逼，但是这种方法有个坏处就是，你不是从官方下载的，你下载的插件很可能有恶意代码，所以还是不要这样做比较好，因为恶意代码对网站的伤害太大</p>
+<p>下面讲讲我常用的插件</p>
+<h2 id="Akismet-Anti-Spam"><a href="#Akismet-Anti-Spam" class="headerlink" title="Akismet Anti-Spam"></a>Akismet Anti-Spam</h2><p>Akismet鼎鼎大名的反垃圾邮件的插件，刚安装完wordpress后就会有，是默认安装的插件之一，我的网站刚开没多久，没什么人访问，所以也就没有垃圾邮件来骚扰我，所以我并没有感受它的强大，但是盛名之下，应该还是不错的，从2015年起，Akismet就开始收费了，是不是很伤心，但是其实并不一定要交钱，看我操作。</p>
+<p>首先安装并激活插件，激活成功后，它会提醒你需要一个API Key，你需要去相应的网站上去申请它，直接通过提示进入相应的界面，最后你会看到一个交钱的界面</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/akismet.png" alt="akismet"></p>
+<p>其实它这个只是建议你捐点钱，你可以将$36拖到最左边，不给钱直接，直接申请获得一个API Key</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/akismet2.png" alt="akismet2"></p>
+<p>这样就搞定了</p>
+<h2 id="All-in-One-SEO"><a href="#All-in-One-SEO" class="headerlink" title="All in One SEO"></a>All in One SEO</h2><p>这个插件就真牛逼了，SEO虽然不是特别难，但是也要一定的学习成本，我对SEO圈内印象最深的话就是，内容为王，一篇原创内容会更让搜索引擎青睐你的网站，所有想真正做一个OK的网站，还是不能单纯的复制粘贴的，虽说内容为王，但是网站的布局混乱还是很不好的，像以前的站长那是必会一些SEO，现在搭建wordpress就不必那么麻烦了，直接使用All in One SEO，将所有SEO有关的内容都帮你集成好了，该插件有付费版和免费版，我现在穷，所以用的是免费版。</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/SEO%E4%BC%98%E5%8C%96.png" alt="SEO优化"></p>
+<p>All in One SEO功能强大，而且完善的文档，但是如果你对SEO一点概念都没有，看的还是像天书，我看的时候对于一些概念也不明白，但没关系，一般文档里都有详细的介绍。</p>
+<p>你可以进入Feature Manager将All in One SEO的一些功能激活，如XML网站地图和Robots.txt文件编写功能等，都是比较重要的功能。</p>
+<p>All in One SEO中需要设置的东西比较多，有点耐心将它设置好，让我们的网站对搜索引擎更加友好。同时All in One SEO可以帮助我们将<a href="https://www.google.com/webmasters/" target="_blank" rel="external">Google Search Console</a>和<a href="https://analytics.google.com" target="_blank" rel="external">Google Analytics</a>整合进来</p>
+<p>Google Search Console，通过名字就可以知道是Google搜索控制中心，通过这个控制中心你可以查看Google为你提供的详细数据，如搜索结果、有哪些搜索流量等等，这样你就可以对你网站的流量有个大致的了解，好针对性的写文章，同时你可以主动提及网站地图，让你的网址对搜索引擎更加友好，可惜我这个是新站，所以没什么流量。</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/GoogleSearchConsole.png" alt="GoogleSearchConsole"></p>
+<p>Google Analytics，同样通过名字就可以知道是Google分析工具，它主要用于分析你网站的流量，如用户数、跳出率之类的，这些数据也要好好利用起来，这样才能针对性的提高自己网站</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/GoogleAnalytics.png" alt="GoogleAnalytics"></p>
+<p>为何不用统计性的插件？<br>其实也不是不可以使用统计型的插件，使用统计插件更加方便，直接安装启用一下，就能很直观的看到网站的流量数据了，而且这些统计插件都比较酷，如有个世界地图告诉你你的用户来自哪里等等，但是这些都功能都比较耗费资源，也就是会让你网站的相应速度变慢，这是我不能忍的，而且在wordpress相关的论坛潜水了一段时间，发现使用统计插件好像不怎么被推崇，耗资源一说，而且统计插件统计出来的数据比Google统计出来的高几倍，同时一些出名的统计插件还被爆出有漏洞，所以我是不推荐使用的，如果你想体验一下，这里推荐Slimstat Analytics这个统计插件，这个统计插件是后起之秀，感觉新一点的插件可能没漏洞（当然只是单纯的感觉），当然好资源还是肯定的，因为它必须要跟踪浏览你网站的每个用户，才能记录出数据。</p>
+<p>完成了All in One SEO的总体设置后，你还可通过Feature Manager安装一些必要的功能，这里推荐安装XML Sitemaps，也就是网站地图，它会告诉搜索引擎这个网站的整体构造方便搜索引擎去爬数据，同时也安装一下Robots.txt，这个文档是一个规范，用于建议搜索引是否要搜索该网站中的每个界面，但是这也仅仅是建议，搜不搜还是看搜索引擎本身，比如微信当然不希望百度的爬虫搜索自己，但是百度的爬虫敢不搜吗？它当然会搜，这样体系出一个道理，如果你的网站已经被很多人认可，访问量很大时，搜索引擎会主动来收录你</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/SEO%E4%BC%98%E5%8C%962.png" alt="SEO优化2"></p>
+<h2 id="Contact-Form-7"><a href="#Contact-Form-7" class="headerlink" title="Contact Form 7"></a>Contact Form 7</h2><p>直接看Contact Form 7这个插件的简介就可以知道该插件的作用，主要用于管理多个联系表单，可以通过简单的标记灵活地自定义表单和邮件内容。大部分wp站长用通过该插件实现收集访客反馈的信息，因为有些恶意用户会发垃圾话，所以Contact Form 7表单Akismet垃圾邮件过滤，而且是通过AJAX加载的，所以并不会严重影响网页的加载速度。</p>
+<h2 id="Kindeditor-For-Wordpress"><a href="#Kindeditor-For-Wordpress" class="headerlink" title="Kindeditor For Wordpress"></a>Kindeditor For Wordpress</h2><p>kindeditor是一款轻量级的在线编辑器，替代Wordpress原生的富文本编辑器，比较受推崇，我已经见我关注的一些人都推荐使用这个编辑器，so我觉得下水试一下，感觉还ok，也没什么惊艳的感觉，因为我更喜欢使用Markdown来编写博客，其实Wordpress中也有几个不错的Markdown插件，不过我还没体验过</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%AF%91%E5%99%A8.png" alt="在线编译器.png"></p>
+<h2 id="Relevanssi"><a href="#Relevanssi" class="headerlink" title="Relevanssi"></a>Relevanssi</h2><p>是一个功能比较牛逼的搜索插件，可以将wordpress默认的搜索插件，Relevanssi同样有免费版和付费版，你可以在后台设计搜索模板，还可以自定义颜色来显示搜索的关键词，该插件还会保留访客所有的搜索结果都wordpress的日志中，这就真牛逼了，一般访客进行搜索的话都是他们迫切想要的内容，这样我们就可以获得访客的需求，然后在写出具有针对性的文章，效果应该很棒，其实我是想将Google站内搜索引入到我的网站中的，毕竟我是Google党</p>
+<p>如果你的网站意见有比较高的流量了，可以入手付费高配版</p>
+<p>大部分配置都可以通过修改relevanssi.php这个文件实现</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/relevanssi.png" alt="relevanssi"></p>
+<h2 id="UpdraftPlus-Backup-Restore"><a href="#UpdraftPlus-Backup-Restore" class="headerlink" title="UpdraftPlus - Backup/Restore"></a>UpdraftPlus - Backup/Restore</h2><p>一个牛逼的备份还原插件，对一个网站来说，数据是最重要的，如果哪天你的网站被人攻破了（虽然很少有人闲的蛋疼来搞你），只要你有数据，你完成可以Copy出一摸一样的网站。</p>
+<p>有备无患，有备无患，所以立刻将UpdraftPlus装上，平时可以不激活使用，但是还是建议一直激活，因为它可以设置定时任务，来完成定时保存。</p>
+<p>UpdraftPlus可以将整个wordpress网站中所有的数据，包括完整的数据库、log、插件主题和wordpress核心文件等都可以备份，然后再通过还原功能一键还原，当然UpdraftPlus有免费版和付费版，其实免费版就够用了。</p>
+<p>使用UpdraftPlus进行备份的操作非常傻瓜式</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%A4%87%E4%BB%BD%E6%89%80%E6%9C%89.png" alt="备份所有.png"></p>
+<p>这里我选择备份在云端，这里我选择Dropbox作为存放备份文件的云端，UpdraftPlus插件可以直接支持Dropbox，配置方式也很简单，几乎不用配置什么，你只需注册一个Dropbox则可</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD.png" alt="远程备份.png"></p>
+<p>UpdraftPlus会提示你是否备份成功，如果成功了，你直接可以在Dropbox看到相应的备份文件，你可将它们下载到本地保留一份</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/wordpress%E5%A4%87%E4%BB%BD.png" alt="wordpress备份.png"></p>
+<h2 id="WP-Authenticity-Checker-WAC"><a href="#WP-Authenticity-Checker-WAC" class="headerlink" title="WP Authenticity Checker (WAC)"></a>WP Authenticity Checker (WAC)</h2><p>WP Authenticity Checker是一个检测主题或插件代码是否安全的插件，但是这种类型的安全插件并不会十分智能，它会认为通过base64方法加密的内容是不安全的，当然对于一些比较明显的漏洞还是有一点识别能力的，我们可以安装这个插件，然后开启来检查一下，看看插件有没有严重问题，如果主题、插件都是wordpress在线安装的，那么应该是没问题的，该插件检查完后就可以停用了，节省一些资源</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/wac%E5%AE%89%E5%85%A8.png" alt="wac安全.png"></p>
+<h2 id="WP-Cerber"><a href="#WP-Cerber" class="headerlink" title="WP Cerber"></a>WP Cerber</h2><p>Cerber也是一个很有必要的安全插件，它的主要功能就是让你的网站避免暴力攻击，如python爬虫跑字典模拟登陆，一些黑客的攻击，因为wordpress登陆的路径都是默认的   你的域名xxx/wp-login.php，如果不做点措施，如现在登陆出错次数或添加验证码区分人机，你的网站很容易就被搞死，就算他一直登陆不了，但是爬虫一直在尝试登陆也会消耗你大量服务器资源，但只要装上Cerber，搞定上面的问题，Cerber可以建立黑名单来现在IP登陆，可以记录登录成功的人的IP、登录时间、登录用户名等等，可以通过reCAPTCHA（Google验证码）来区分人机</p>
+<p>总之该插件功能强大，为了提高一点网站的安全，牺牲一些系统资源也是值得的</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E8%AE%B0%E5%BD%95%E7%99%BB%E5%BD%95.png" alt="记录登录.png"></p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81.png" alt="登录验证.png"></p>
+<p>还有一个问题，就像前面提到的，登录文件总是  网站域名/wp-login.php，我们可以将login.php改为其他人猜不到的文件名，有两种方法，第一种就是修改源代码，第二种就是通过插件来实现，我使用的是第一种方法</p>
+<p>具体的操作如下</p>
+<p>1.将login.php修改成其他不易被猜到的文件名，如ayuliao.php</p>
+<p>2.打开ayuliao.php，将文件里的wp-login.php全部替换为ayuliao.php，可以通过vim命令来替换，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># vim ayuliao.php</div><div class="line">然后在vim中输入如下一次性替换命令</div><div class="line">:1,$s/wp-login.php/ayuliao.php/g</div></pre></td></tr></table></figure>
+<p>没使用vim这个命令的可以Google一下，vim真的很强大，很好用</p>
+<p>3.打开wp-includes/general-template.php，同样将wp-login.php全部替换为ayuliao.php，我使用跟上面一样的方法</p>
+<p>但是这样修改完后，你会发现非常鸡肋，虽然wp-login.php确实没了，但是只要它输入 网站域名/wp-admin.php，如果你没有登录，wordpress会自动跳转到你的登录界面，那么前面的修改就没有什么效果了，虽然登录界面有Google验证码拦着大部分恶意机器人，但是改的这么辛苦竟然一定卵用都没有，让我非常郁闷</p>
+<p>直到后面我发现了这个插件</p>
+<h2 id="BulletProof-Security"><a href="#BulletProof-Security" class="headerlink" title="BulletProof Security"></a>BulletProof Security</h2><p>这个安全插件功能非常牛，而且很全面，可以防范很多安全工具，保护你的 .htaccess 文件，记录HTTP错误，数据库备份，数据库前缀的修改，还可以防各种各样的攻击，在登录安全方面也做的比较全面，通过它，我们可以修改登录文件的名称，也就是wp-login.php名称，可以隐藏wp-admin.php，我虽然开启了它比较多的功能，但是对目前我来说最有用的就是隐藏wp-admin.php，后面我停用了这个插件，主要出于网站性能考虑，虽然停用了它，但是隐藏wp-admin.php的效果还在，这说明该插件做了一些源码上的修改。如果你有兴趣，你也可以安装来玩弄一下</p>
+<h2 id="WP-Fastest-Cache"><a href="#WP-Fastest-Cache" class="headerlink" title="WP Fastest Cache"></a>WP Fastest Cache</h2><p>Fastest Cache又是一款名气很大的插件，分免费和付费，你应该猜到了，我使用的是免费版，一句话概括它的强大功能就是使用缓存、压缩等技术让你的网站更快，这样当你下次再次打开网站时，就不必重头加载网站了，提高了用户打开网页的速度。</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E6%90%9E%E5%AE%9A%E7%BC%93%E5%AD%98.png" alt="搞定缓存.png"></p>
+<h2 id="WP-Super-Cache"><a href="#WP-Super-Cache" class="headerlink" title="WP Super Cache"></a>WP Super Cache</h2><p>提高网站响应速度的方法除了生成缓存，还有就是使用CDN，优秀的CDN会让你的网站打开速度有明显的提升，但是大部分的CDN都是需要付费的，如果你要需要使用付费CDN，这里推荐MaxCDN，它可以与WP Fastest Cache结合使用，你可以直接安装MaxCDN这个插件，它什么都好，就是需要付费</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E9%80%89%E6%8B%A9%E4%B8%80%E4%B8%AACDN.png" alt="选择一个CDN.png"></p>
+<p>这里推荐使用WP Super Cache，该插件的主要功能依旧是缓存网站，我一般与WP Fastest Cache一同使用，让两者功能互补，反正又不会冲突，但是WP Super Cache最牛逼的提供免费的CDN，你可以直接使用</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/CDN%E6%94%AF%E6%8C%81.png" alt="CDN支持.png"></p>
+<p>用代码创造乐趣—ayuliao</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/06/12/python自然语言处理/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/05/31/搭建自己的wordpress博客/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
