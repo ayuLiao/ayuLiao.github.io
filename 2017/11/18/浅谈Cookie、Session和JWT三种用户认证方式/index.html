@@ -12,7 +12,7 @@
     
     <title>
         
-            tags | 
+            浅谈Cookie、Session和JWT三种用户认证方式 | 
         
         ayuLiao
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="ayuLiao">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",web">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://lmwen.top">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="tags | ayuLiao">
+    <meta property="og:title" content="浅谈Cookie、Session和JWT三种用户认证方式 | ayuLiao">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="web"> 
 
+    
+        <meta property="article:published_time" content="Sat Nov 18 2017 21:53:25 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Nov 18 2017 21:55:27 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="tags | ayuLiao">
+    <meta name="twitter:title" content="浅谈Cookie、Session和JWT三种用户认证方式 | ayuLiao">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://lmwen.top/tags/index.html" />
+        <link rel="canonical" href="http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "浅谈Cookie、Session和JWT三种用户认证方式",
+    "url": "http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html",
+    "datePublished": "Sat Nov 18 2017 21:53:25 GMT+0800",
+    "dateModified": "Sat Nov 18 2017 21:55:27 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
 
 
     
@@ -273,60 +306,270 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Cookie用户认证"><span class="post-toc-number">2.</span> <span class="post-toc-text">Cookie用户认证</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Session用户认证"><span class="post-toc-number">3.</span> <span class="post-toc-text">Session用户认证</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JWT用户认证"><span class="post-toc-number">4.</span> <span class="post-toc-text">JWT用户认证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JWT结构"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">JWT结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JWT的思考"><span class="post-toc-number">5.</span> <span class="post-toc-text">JWT的思考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://obfs4iize.bkt.clouddn.com/%E6%B5%85%E8%B0%88Cookie%E3%80%81Session%E5%92%8CJWT%E4%B8%89%E7%A7%8D%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F.jpg)">
+    
+            <p class="article-headline-p">
+                浅谈Cookie、Session和JWT三种用户认证方式
+            </p>
+        </div>
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/Linux/" style="font-size: 16px; color: #757575">Linux</a> <a href="/tags/NLP/" style="font-size: 16px; color: #757575">NLP</a> <a href="/tags/PHP/" style="font-size: 16px; color: #757575">PHP</a> <a href="/tags/android/" style="font-size: 23.6px; color: #535353">android</a> <a href="/tags/github/" style="font-size: 16px; color: #757575">github</a> <a href="/tags/hack/" style="font-size: 19.8px; color: #646464">hack</a> <a href="/tags/hexo/" style="font-size: 16px; color: #757575">hexo</a> <a href="/tags/php/" style="font-size: 16px; color: #757575">php</a> <a href="/tags/python/" style="font-size: 35px; color: #212121">python</a> <a href="/tags/web/" style="font-size: 16px; color: #757575">web</a> <a href="/tags/weixin/" style="font-size: 19.8px; color: #646464">weixin</a> <a href="/tags/wordpress/" style="font-size: 19.8px; color: #646464">wordpress</a> <a href="/tags/医学/" style="font-size: 16px; color: #757575">医学</a> <a href="/tags/算法/" style="font-size: 19.8px; color: #646464">算法</a> <a href="/tags/网络协议/" style="font-size: 27.4px; color: #434343">网络协议</a> <a href="/tags/随笔/" style="font-size: 31.2px; color: #323232">随笔</a>
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>11月 18, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/web/">web</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅谈Cookie、Session和JWT三种用户认证方式&url=http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=浅谈Cookie、Session和JWT三种用户认证方式&url=http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/11/18/浅谈Cookie、Session和JWT三种用户认证方式/index.html&title=浅谈Cookie、Session和JWT三种用户认证方式" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>因为HTTP是无状态的协议，也就是说，我们无法通过HTTP来标识出不同的用户，可是有些资源我们只想返回给特定的用户，比如说用户账号的个人信息，此时就需要验证该请求的身份了，判断是不是特定用户，此时就需要用户认证，判断出不同的用户。<br>常见的用户认证有cookie、session和JWT（Token）这三种形式，本篇文章来谈谈这三种形式</p>
+<h2 id="Cookie用户认证"><a href="#Cookie用户认证" class="headerlink" title="Cookie用户认证"></a>Cookie用户认证</h2><p>cookie算是最早的用户认证机制了，现在几乎见不到了，它消失的原因也简单，就是不安全，非常不安全，cookie认证的流程很简单，服务器会将用户的账号和密码返回给用户，用户存到cookie中就好了，那么下次用户再发HTTP请求给服务器时，带上账号和密码就可以了，服务器接收到了用户发送过来的请求，通过其中的账号和密码就可以判断出这个请求是不是特定用户发送出来的，当服务器确定了用户的身份后就可以将该用户私人的数据返回了，比如返回该用户的订单数据等等</p>
+<p>可以看出这种方式非常粗暴，理解起来很简单，但是将账号和密码直接放到Cookie中明显是不安全的，因为其他人可以直接查看Cookie，如图</p>
+<p><img src="http://onxxjmg4z.bkt.clouddn.com/cookie%E4%BF%9D%E5%AD%98%E5%AF%86%E7%A0%81.png" alt="cookie保存密码.png"></p>
+<p>那么我们将密码加密然后再保存到Cookie中不就得了？Too Young Too simple，虽然密码加了密，但是Cookie容易被人获得，当别人获得了你的Cookie，就可以拿到账号密码，他就可以直接使用获得的账号密码来登录你的账号了</p>
+<h2 id="Session用户认证"><a href="#Session用户认证" class="headerlink" title="Session用户认证"></a>Session用户认证</h2><p>因为Cookie那么不安全，所以后面就出现了Session，Session算是比较常见的用户认证机制了，先来理一理Session用户认证的过程。</p>
+<p>1.首先服务器会建立一张表，这里简单的叫session表<br>2.当用户登录时，服务器查用户表判断用户是否合法<br>3.如果用户认证通过，就会将用户的一些信息存放到session表中，如账号、密码之类的，同时将一个Session ID返回给客户端，这个ID是唯一的，通过这个ID就可以查找session表中对应的信息<br>4.客户端将获得的ID存到Cookie中，在下次请求时，将Cookie中的ID带到请求中<br>5.服务器收到客户端发送的请求，获得其中的Session ID，通过Session ID来查找Session表，获得用户的信息，并验证用户的身份。</p>
+<p>上面就是Session的一个机制，当然不同语言实现的方式可能有些出入，但是原理就是这样的，Session的认证过程其实也不复杂，那么相对于Cookie，它的优势在哪？一个致命的优势就是比Cookie安全，我们可以发现，虽然Session中也将数据存放都客户端的Cookie中，但是这些数据不是敏感数据，就算hacker拿到了这些数据，也不能一直使用，它有个过期时间，过了过期时间，就可以将Session表中相应的字段删除，这样通过过期的Session ID就无法通过用户身份验证了，而如果将用户的账号密码存到Cookie中，hacker获得后，就可以一直使用。</p>
+<p>当然Session还是有一些问题：</p>
+<p>1.Session机制是服务端的机制，每次用户认证都要查Session表或者在Session表增添记录，当用户量比较大时，会给服务器带来比较大的压力，而且通常来讲，Session表都是保存到内存中，这样可以加快搜索速度，但是用户基数太大，服务端的内存开销就会很大</p>
+<p>2.扩展性比较差，如果Session表保存到内存中，那么用户认证成功后，下次请求必须还是这台服务器做响应，降低了分布式服务集群的优势，扩展性差</p>
+<p>3.前面也提了，hacker拿到了Cookie中唯一的Session ID依旧可以通过用户认证，虽然用过期时间，但是在这段时间内，hacker该做的也做完了</p>
+<h2 id="JWT用户认证"><a href="#JWT用户认证" class="headerlink" title="JWT用户认证"></a>JWT用户认证</h2><p>前面介绍了那么多，就是为了引出今天的主角，Json Web Token，简称JWT。因为Session的各种缺点，人们就想着有没有更好的方法，比如服务器生产遵守一定规律的ID，简单计算这个ID就可以认证用户身份并且保证安全之类的，有，JWT就是这样的一个方法，我们一般将JWT生成的具有规律的ID叫做Token</p>
+<p>JWT是一个开放标准，它规定通信双方使用JSON对象的形式进行安全通信，它可以使用非对称加密算法对数据进行加密，保证数据的安全</p>
+<h3 id="JWT结构"><a href="#JWT结构" class="headerlink" title="JWT结构"></a>JWT结构</h3><p>JWT由三个部分组成，分别是Header头部、Payload载荷、Signature签名，三个部分的具体结构如图</p>
+<p><img src="http://onxxjmg4z.bkt.clouddn.com/JWT%E7%BB%93%E6%9E%84.jpg" alt="JWT结构.jpg"></p>
+<p>简单来介绍一下这三个结构</p>
+<p>首先是Header 头部</p>
+<p>头部一般包含两个部分，typ定义JWT的类型，alg定义JWT使用的加密算法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;typ&quot;:&quot;JWT&quot;,</div><div class="line">    &quot;alg&quot;:&quot;HS256&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看出是Header是JSON的格式，然后使用Base64算法对Header进行编码，编码后的内容就是JWT结构的第一部分</p>
+<p>Base64算法是可以轻松解密的，所以严格说Base64不能算是加密过程，只能算编码过程</p>
+<p>Header经过Base64编码后可以获得如下数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</div></pre></td></tr></table></figure></p>
+<p>接着看Payload 载荷<br>其实载荷就是用来放信息的地方，我们可以将用户的各种非敏感信息放到payload中，JWT规范中对这部分的字段做了比较详细的介绍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;iss&quot;: &quot;ayuliao JWT&quot;,</div><div class="line">    &quot;iat&quot;: 1652323456,</div><div class="line">    &quot;exp&quot;: 1652328456,</div><div class="line">    &quot;aud&quot;: &quot;www.lmwen.com&quot;,</div><div class="line">    &quot;sub&quot;: &quot;ayuliao@xxx.com&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中<br>iss：这个Token的签发者<br>iat：签发时间<br>exp：过期时间，过期时间必须在当前时间之后<br>aud：接受方<br>sub：Token的主题</p>
+<p>payload部分的数据也是JSON格式，同样要通过Base64对这部分数据进行编码，编号后的数据如下(可以自己解码一下)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eyJpc3MiOiAiYXl1bGlhbyBKV1QiLCJpYXQiOiAxNjUyMzIzNDU2LCAiZXhwIjogMTY1MjMyODQ1NiwgImF1ZCI6ICJ3d3cubG13ZW4uY29tIiwic3ViIjogImF5dWxpYW9AeHh4LmNvbSJ9</div></pre></td></tr></table></figure></p>
+<p>最后是Singnature 签名<br>Singnature比Header和Payload复杂点，需要将上面我们通过Base64编码后得到的Header和Payload通过 . 号链接起来构成一个字符串，在使用Header定义的加密算法对该字符串进行加密，加密时还必须加盐，增加反解密的难度，这个盐由服务端来定义，这里就使用HS256算法进行加密，盐是ayuliao</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var encodedString = base64UrlEncode(header) + &quot;.&quot; + base64UrlEncode(payload);</div><div class="line">HMACSHA256(encodedString, &apos;ayuliao&apos;);</div></pre></td></tr></table></figure>
+<p>加密完后，得到的字符串如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a4e049dfe99def8217a2fa9e48d0574b90e4902335ad66dd53a69bb71be19e51</div></pre></td></tr></table></figure>
+<p>进行签名的目的是为了保证JWT没有被人篡改过，保证信息的安全性和可靠性，因为Header和Payload只是简单的使用了Base64进行编码，很容易被人解码，那么他们就可以修改其中的内容，再进行Base64编码，然后发送篡改后的数据给我们，那么此时服务端可以判断出Header和Payload形成的签名和正常的Singnature签名是不一样的。因为篡改Header和Payload人不知道服务器生成的盐，所以得出签名就是不一样的</p>
+<p>获得了JWT的三部分后，将这三部分通过 . 号连接在一起就获得了JWT，完整的JWT如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiAiYXl1bGlhbyBKV1QiLCJpYXQiOiAxNjUyMzIzNDU2LCAiZXhwIjogMTY1MjMyODQ1NiwgImF1ZCI6ICJ3d3cubG13ZW4uY29tIiwic3ViIjogImF5dWxpYW9AeHh4LmNvbSJ9.a4e049dfe99def8217a2fa9e48d0574b90e4902335ad66dd53a69bb71be19e51</div></pre></td></tr></table></figure>
+<h2 id="JWT的思考"><a href="#JWT的思考" class="headerlink" title="JWT的思考"></a>JWT的思考</h2><p>通过前面的内容，我们都知道了Header和Payload中的数据是很容易就可以被解码获得的，那么放到这里的信息不就暴露了吗？</p>
+<p>没错，Payload的目的其实就是暴露数据，不然在设计时也不会考虑使用Base64这种可以轻易被反解的算法，在Payload中，我们不应该放置用户的敏感信息，比如用户的密码之类的，可以将用户名或者用户ID之类的数据放到Payload中，这样在编写代码逻辑时，如果需要，自己就可以直接从Payload中获得用户数据，让代码逻辑变得简单些</p>
+<p>从对比JWT和Session这两种验证方式也可以看出JWT的优点，Session因为是将用户信息存到服务端，所以在用户基数大时，占用了服务器资源，对比较大型的应用，可能需要在Session表中存很多状态，而JWT方法将用户状态分散到了客户端中，存到payload中，这样可以减轻服务器的压力，虽然JWT在服务端进行验证时需要进行计算，还有就是Session的扩展性比较差，只适合单点登录，而JWT没有这个问题</p>
+<p>在网上找到一个JWT用户认证的流程图，在这里贴一下</p>
+<p><img src="http://onxxjmg4z.bkt.clouddn.com/JWT%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81.jpg" alt="JWT用户认证"></p>
+<blockquote>
+<p>1.首先，前端通过Web表单将自己的用户名和密码发送到后端的接口。这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密的传输（https协议），从而避免敏感信息被嗅探。</p>
+<p>2.后端核对用户名和密码成功后，将用户的id等其他信息作为JWT Payload（负载），将其与头部分别进行Base64编码拼接后签名，形成一个JWT。形成的JWT就是一个形同lll.zzz.xxx的字符串。</p>
+<p>3.后端将JWT字符串作为登录成功的返回结果返回给前端。前端可以将返回的结果保存在localStorage或sessionStorage上，退出登录时前端删除保存的JWT即可。</p>
+<p>4.前端在每次请求时将JWT放入HTTP Header中的Authorization位。(解决XSS和XSRF问题)</p>
+<p>5.后端检查是否存在，如存在验证JWT的有效性。例如，检查签名是否正确；检查Token是否过期；检查Token的接收方是否是自己（可选）。</p>
+<p>6.验证通过后后端使用JWT中包含的用户信息进行其他逻辑操作，返回相应结果。</p>
+</blockquote>
+<p>整个流程就是这样，可以看看原文<a href="http://lion1ou.win/2017/01/18/" target="_blank" rel="external">前后端分离之JWT用户认证</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>能用JWT就用JWT吧，如果你使用Django做前后端分离开发，推荐使用<a href="https://github.com/ayuLiao/django-rest-framework-jwt" target="_blank" rel="external">django-rest-framework-jwt</a>，通过Github方法下载源码，以源码的方式集成到项目中，方便修改源码，满足自己对JWT的需要</p>
+
+    
+
+    
 </div>
 
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+                
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
 
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/11/18/学习的正反馈和技能化/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/18/Django实现用户短信注册/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -484,6 +727,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
