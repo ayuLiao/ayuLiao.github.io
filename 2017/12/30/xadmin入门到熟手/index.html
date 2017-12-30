@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            xadmin入门到熟手 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",python">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="xadmin入门到熟手 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="python"> 
+
+    
+        <meta property="article:published_time" content="Sat Dec 30 2017 11:50:06 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 30 2017 12:08:56 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="xadmin入门到熟手 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "xadmin入门到熟手",
+    "url": "http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html",
+    "datePublished": "Sat Dec 30 2017 11:50:06 GMT+0800",
+    "dateModified": "Sat Dec 30 2017 12:08:56 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xadmin替代admin"><span class="post-toc-number">2.</span> <span class="post-toc-text">xadmin替代admin</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin"><span class="post-toc-number">2.0.0.0.1.</span> <span class="post-toc-text">其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建模块"><span class="post-toc-number">3.</span> <span class="post-toc-text">创建模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#熟练使用xadmin"><span class="post-toc-number">4.</span> <span class="post-toc-text">熟练使用xadmin</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://onxxjmg4z.bkt.clouddn.com/xadmin%E5%85%A5%E9%97%A8%E5%88%B0%E7%86%9F%E6%89%8B.jpg)">
+    
+            <p class="article-headline-p">
+                xadmin入门到熟手
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>12月 30, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/python/">python</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=xadmin入门到熟手&url=http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=xadmin入门到熟手&url=http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2017/12/30/xadmin入门到熟手/index.html&title=xadmin入门到熟手" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>如果你开发过Django项目肯定会知道Django自带了一个后台管理系统admin，其实admin已经十分强大了，只需要简单配置一下，就可以直接使用了，xadmin基于Django默认的admin，但是它的功能相对于默认的admin更加强大，同样通过配置就可以直接使用，而且可以使用的功能更多，这篇文章就来讲讲xadmin中的使用技巧</p>
+<p>目前xadmin这个项目在Github上已经有一段时间没有更新了，但是它的代码依旧有很大的参考价值，看完这篇文章体会了它的强大功能后你会爱不释手，当我们熟悉了xadmin后就可以简单的修改它的代码，让它适配最新的Django和Python</p>
+<p>为什么标题不是xadmin入门到精通？因为我觉得只是会有还不能称为精通</p>
+<h2 id="xadmin替代admin"><a href="#xadmin替代admin" class="headerlink" title="xadmin替代admin"></a>xadmin替代admin</h2><p>首先创建一个Django项目，在Django项目中创建extra_apps文件夹，该文件夹专门用于放第三方插件代码，将xadmin的代码从<a href="https://github.com/sshwsfc/xadmin" target="_blank" rel="external">Github</a>上下载下来，放到extra_apps文件夹中，并将该文件夹设置为Sources Root</p>
+<p>将文件夹设置为Sources Root的方式：选中extra_apps文件夹–&gt;左击–&gt;选中Mark Directory as–&gt;Sources Root</p>
+<p>将文件夹设置为Sources Root，以后在项目中就可以直接引用extra_apps中的python文件了，而不必加文件名前缀，简单说就是可以通过xadmin直接使用，而不必extra_apps.xadmin的形式来使用</p>
+<p><img src="http://onxxjmg4z.bkt.clouddn.com/xadminproject.png" alt="xadminproject.png"></p>
+<p>但是单纯的将extra_apps设置为Sources Root还不够，这只是让PyCharm这个IDE知道可以直接使用extra_apps文件夹中的内容，如果在命令行直接通过python来运行已经报找不到xadmin的错误，要解决这个问题，我们需要在settings.py文件中声明一下extra_apps文件夹的路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</div><div class="line"># 添加下面两句，声明extra_apps文件夹的路径</div><div class="line">sys.path.insert(0, BASE_DIR)</div><div class="line">sys.path.insert(0, os.path.join(BASE_DIR, &apos;extra_apps&apos;))</div></pre></td></tr></table></figure>
+<h6 id="其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin"><a href="#其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin" class="headerlink" title="其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin"></a>其实除了去Github上直接下载xadmin，还可以直接通过pip来安装xadmin</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install xadmin</div></pre></td></tr></table></figure>
+<p>但是不推荐使用pip安装，因为pip安装的并不是最新的代码，而且通过pip安装不方便修改xadmin中的源代码</p>
+<p>接着通过startapp创建名为users的应用，在users应用下使用xadmin</p>
+<p>要在users下使用xadmin首先需要在settings.py中声明两者xadmin和crispy_forms</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">INSTALLED_APPS = [</div><div class="line">    &apos;django.contrib.admin&apos;,</div><div class="line">    &apos;django.contrib.auth&apos;,</div><div class="line">    &apos;django.contrib.contenttypes&apos;,</div><div class="line">    &apos;django.contrib.sessions&apos;,</div><div class="line">    &apos;django.contrib.messages&apos;,</div><div class="line">    &apos;django.contrib.staticfiles&apos;,</div><div class="line">    &apos;users&apos;,</div><div class="line">    &apos;xadmin&apos;,</div><div class="line">    &apos;crispy_forms&apos;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>为了方便使用，将Django链接数据库的方式改为最为熟悉的MySQL，并且将系统默认的语言设置为中文</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">DATABASES = &#123;</div><div class="line">    &apos;default&apos;: &#123;</div><div class="line">        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,</div><div class="line">        &apos;NAME&apos;: &apos;bookstore&apos;,</div><div class="line">        &apos;USER&apos;:MySQL用户名,</div><div class="line">        &apos;PASSWORD&apos;:MySQL密码,</div><div class="line">        &apos;HOST&apos;:&apos;127.0.0.1&apos;,</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">LANGUAGE_CODE = &apos;zh-hans&apos;</div><div class="line"></div><div class="line">TIME_ZONE = &apos;Asia/Shanghai&apos;</div><div class="line"></div><div class="line">USE_I18N = True</div><div class="line"></div><div class="line">USE_L10N = True</div><div class="line">#默认是Ture，时间是utc时间，由于我们要用本地时间，所用手动修改为false</div><div class="line">USE_TZ = False</div></pre></td></tr></table></figure>
+<p>作为上面的配置，就可以在users模块下创建adminx.py的python文件，这个文件名是xadmin规定的，它会自动在相应的模块下加载adminx.py文件</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/adminx%E6%96%87%E4%BB%B6.png" alt=""></p>
+<p>首先可以在adminx.py中写上一些默认的配置，如xadmin后台的样式选择，后台显示的标签和后台的页脚等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import xadmin</div><div class="line">from xadmin import views</div><div class="line"></div><div class="line"># 开启后台主题样式选择</div><div class="line">class BaseSetting(object):</div><div class="line">    enable_themes = True</div><div class="line">    user_bootswatch = True</div><div class="line"></div><div class="line"></div><div class="line"># 后台全局设置</div><div class="line">class GlobalSettings(object):</div><div class="line">    # 后台标签</div><div class="line">    site_title = &apos;AYULIAO的后台&apos;</div><div class="line">    # 后台页脚</div><div class="line">    site_footer = &apos;AYULIAO&apos;</div><div class="line">    </div><div class="line">xadmin.site.register(views.BaseAdminView, BaseSetting)</div><div class="line">xadmin.site.register(views.CommAdminView, GlobalSettings)</div></pre></td></tr></table></figure>
+<p>最新的代码主题样式选择其实失效了，但是这个对于轻样式的后台来说，没什么影响</p>
+<p>为了可以访问，需要修改一下urls.py文件，该文件主要用于放Django的全局路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">from django.conf.urls import url, include</div><div class="line">import xadmin</div><div class="line"></div><div class="line">urlpatterns = [</div><div class="line">    url(r&apos;^xadmin/&apos;, xadmin.site.urls),</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>这样运行一下，效果如图：</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E5%90%8E%E5%8F%B0.png" alt=""></p>
+<h2 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h2><p>Django有强大的ORM功能，所以我们不必去写SQL，通过Django的ORM机制，可以很轻松的使用数据库，当然使用Django ORM来操作MySQL当然没有最原始的SQL快</p>
+<p>这里我们创建3个模块，分别是作者、书籍和出版社，其中作者和书籍是多对多的关系，一个作者可以写多本书，一本书也可以由多个作者一同合著，而书籍和出版社是一对多的关系，一本书籍只能由一个出版社印刷出书，而一个出版社却可以出多本书籍，在后面细谈Django ORM机制的文章中也会使用这3个模型</p>
+<p>第一个是作者模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Author(models.Model):</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    作者表</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    name = models.CharField(max_length=15, verbose_name=&apos;作者名&apos;, null=True, blank=True)</div><div class="line">    age = models.IntegerField(default=0, verbose_name=&apos;作者年龄&apos;)</div><div class="line">    # 星星越多，后台排名越前</div><div class="line">    star = models.IntegerField(default=0, verbose_name=&apos;星星&apos;)</div><div class="line">    # 被封杀的作者后台不看见</div><div class="line">    is_block = models.BooleanField(default=False, verbose_name=&apos;封杀&apos;)</div><div class="line">    # 该作者写过多少本书</div><div class="line">    booknums = models.IntegerField(default=0, verbose_name=&apos;书籍数量&apos;)</div><div class="line">    add_time = models.DateTimeField(default=datetime.now, verbose_name=&quot;添加时间&quot;)</div><div class="line"></div><div class="line">    # xadmin显示</div><div class="line">class Meta:</div><div class="line">    verbose_name = &apos;作者&apos;</div><div class="line">    verbose_name_plural = verbose_name</div><div class="line"></div><div class="line">    #  在xadmin中新增和修改时的显示</div><div class="line">def __str__(self):</div><div class="line">    return self.name</div></pre></td></tr></table></figure>
+<p>作者用于作者名、作者年龄、星星数、是否被封杀、书籍数等属性</p>
+<p>verbose_name是后台显示这张表的名字，同时将复数形式的verbose_name_plural也定义成verbose_name，这样复数形式和单数形式都显示作者，在代码中，还重写了<strong>str</strong>(self)方法，该方法用于xadmin修改数据时显示</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E4%BF%AE%E6%94%B9.png" alt=""></p>
+<p>然后是书籍模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Book(models.Model):</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    书籍表</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    bookname = models.CharField(max_length=15, verbose_name=&apos;书名&apos;, null=True, blank=True)</div><div class="line">    author = models.ManyToManyField(Author, verbose_name=&apos;本书作者&apos;)</div><div class="line">    des = UEditorField(verbose_name=u&apos;书籍描述&apos;, width=600, height=300, toolbars=&quot;full&quot;, imagePath=&quot;book/ueditor/&quot;, filePath=&quot;book/ueditor/&quot;,</div><div class="line">                           upload_settings=&#123;&quot;imageMaxSize&quot;: 1204000&#125;,)</div><div class="line">    add_time = models.DateTimeField(default=datetime.now, verbose_name=&quot;添加时间&quot;)</div><div class="line"></div><div class="line">class Meta:</div><div class="line">    verbose_name = &apos;书籍&apos;</div><div class="line">    verbose_name_plural = verbose_name</div><div class="line"></div><div class="line">def __str__(self):</div><div class="line">    return self.bookname</div></pre></td></tr></table></figure>
+<p>数据模块通过ManyToManyField关键字与Author模块进行多对多的管理，其实Django就会通过第三张表来记录这种多对多的关系</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%A4%9A%E5%AF%B9%E5%A4%9Axadmin.png" alt=""></p>
+<p>出版社模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">class Press(models.Model):</div><div class="line">        &apos;&apos;&apos;</div><div class="line">        出版社表</div><div class="line">        &apos;&apos;&apos;</div><div class="line">    pressname = models.CharField(max_length=15, verbose_name=&apos;出版社的名称&apos;, null=True, blank=True)</div><div class="line">    book = models.ForeignKey(Book, verbose_name=&apos;出版社出版的书&apos;)</div><div class="line">    url = models.CharField(max_length=100, verbose_name=&apos;出版社主页&apos;)</div><div class="line">    add_time = models.DateTimeField(default=datetime.now, verbose_name=&quot;添加时间&quot;)</div><div class="line"></div><div class="line">class Meta:</div><div class="line">    verbose_name = &apos;出版社&apos;</div><div class="line">    verbose_name_plural = verbose_name</div><div class="line"></div><div class="line">def go_to(self):</div><div class="line">    url = self.url</div><div class="line">    aurl = &quot;&lt;a href=&apos;&quot;+url+&quot;&apos;&gt; 出版社主页 &lt;/&gt;&quot;</div><div class="line">    from django.utils.safestring import mark_safe</div><div class="line">    return mark_safe(aurl)</div><div class="line">go_to.short_description =  &apos;出版社主页&apos;</div><div class="line"></div><div class="line">def __str__(self):</div><div class="line">    return self.pressname</div></pre></td></tr></table></figure>
+<p>通过ForeignKey关键字实现了书籍和出版社一对多的关系，这里还定义了go_to方法，该方法定义了一个url，并使用了Django的mark_safe方法让url可以显示出来，如果不使用mark_safe，那么所有的HTML代码都会被转译而不会被执行，这是在安全上的考虑，接着为该方法定义short_description，其实就是xadmin中的显示名</p>
+<p>xadmin不只可以显示数据库中的字段，而且可以显示方法</p>
+<p>编写好模块后，PyCharm命令行中使用下面的命令，让Django中的模块在MySQL数据库中生成对应的数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">makemigrations</div><div class="line">&amp;&amp;</div><div class="line">migrate</div></pre></td></tr></table></figure>
+<h2 id="熟练使用xadmin"><a href="#熟练使用xadmin" class="headerlink" title="熟练使用xadmin"></a>熟练使用xadmin</h2><p>生成好对应的模块后就可以跟xadmin愉快的玩耍了，xadmin有很多易用的功能，打开adminx.py文件，将与xadmin相关的代码写到其中</p>
+<p>首先是作者模块对于的xadmin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class AuthorAdmin(object):</div><div class="line">    # 列表显示</div><div class="line">    list_display = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;,&apos;add_time&apos;]</div><div class="line">    # 搜索范围</div><div class="line">    search_fields = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;]</div><div class="line">    # 列表过滤</div><div class="line">    list_filter = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;,&apos;add_time&apos;]</div><div class="line">    # 默认排序,&apos;-&apos;:倒序,从大到小</div><div class="line">    ordering = [&apos;-booknums&apos;]</div><div class="line">    # 只读</div><div class="line">    readonly_fields = [&apos;star&apos;]</div><div class="line">    # 刷新秒数</div><div class="line">    refresh_times = [3,5]</div><div class="line">    # 直接编辑</div><div class="line">    list_editable = [&apos;age&apos;,&apos;name&apos;]</div><div class="line"></div><div class="line">    def queryset(self):</div><div class="line">        &apos;&apos;&apos;</div><div class="line">        过滤，将被封杀的作者过滤掉</div><div class="line">        :return:</div><div class="line">        &apos;&apos;&apos;</div><div class="line">        qs = super(AuthorAdmin, self).queryset()</div><div class="line">        qs = qs.filter(is_block=False)</div><div class="line">        return qs</div></pre></td></tr></table></figure>
+<p>代码中有详细的解释<br>list_display定义xadmin要显示的内容，将一个list赋值给这个变量，需要注意<strong>变量名是固定的，必须是list_display，不然xadmin认不出来，其实Django默认的admin也是这样的</strong></p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/list_display.png" alt=""></p>
+<p>search_fields定义xadmin可以搜索的内容，比如可以对作者的姓名进行搜索，那就将name放到list中赋值给search_fields</p>
+<p>list_filter就是过滤器了，定义xadmin的过滤条件，让xadmin显示满足条件的数据</p>
+<p>图中，使用ayuliao这个作者名进行搜索，出现一条结果，同时还展示了过滤功能，我可以通过作者名进行过滤、通过时间进行过滤</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E6%90%9C%E7%B4%A2%E5%92%8C%E8%BF%87%E6%BB%A4.png" alt=""></p>
+<p>ordering定义xadmin的默认排序，如果我想让xadmin对作者出的书籍从多到少这样的顺序进行排序</p>
+<p>readonly_fields让xadmin不能修改某个字段，在上段代码中，将作者的星星数定义成只读，其他字段都是可以修改的，如图</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E5%8F%AA%E8%AF%BB.png" alt=""></p>
+<p>refresh_times定义xadmin刷新秒数，这里定义了3和5，也就是可以选择3秒刷新一次页面或者5秒刷新一次页面，可以在想快速看到数据表变化时使用</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E5%88%B7%E6%96%B0%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+<p>list_editable可以让xadmin对定义的字段直接进行编辑，不用进入编辑页面，一般来说，我们要编辑一个对象需要进入该对象的编辑页面，对于一些经常需要编辑的字段就会显得麻烦，可以将经常需要编辑的字段设置给list_editable</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E7%9B%B4%E6%8E%A5%E7%BC%96%E8%BE%91.png" alt=""></p>
+<p>最后重写了queryset方法，该方法会返回数据表中对应的数据给xadmin，<strong>重写它就可以实现数据表数据显示到xadmin需要进行的操作</strong>，这里我们不想显示被封杀的作者，那么可以在queryset方法中实现相应的逻辑</p>
+<p>在queryset()中，首先继承了父类AuthorAdmin的queryset()，然后使用filter()方法将is_block为Flase的过滤出来，也就是将没有被封杀的过滤出来，将过滤后的数据集返回，这样xadmin就不会显示被封杀的作者了</p>
+<p>上面就完成了AuthorAdmin，虽然在这里不显示被封杀的作者，但是我想在一个单独的模块中显示这些被封杀的作者，有点像回收站，列表中删除的内容会出现在回收站中，我们可以进入回收站看见被我们删除的内容，当然也可以恢复它，那么在xadmin中怎么实现呢？</p>
+<p>有人可能会想，单独构建一个模块对于一张表，专门用于存放被封杀的作者，然后通过xadmin显示出来，这种方法当然可行，但是这样就需要多维护一张表，其实有更好的办法，就是Django ORM模块代理的机制，同一张表通过代理的方式对于两个模块，这里我们需要定义另一个模块来显示被封杀的作者，但是不必创建新的数据表，依旧放在Author表中</p>
+<p>回到models.py，定义BlockAuthor模块，继承Author</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class BlockAuthor(Author):</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    被封杀的作者，使用Modle的代理功能，不必重新写一个模块</div><div class="line">    &apos;&apos;&apos;</div><div class="line">    class Meta:</div><div class="line">        verbose_name = &apos;封杀作者&apos;</div><div class="line">        verbose_name_plural = verbose_name</div><div class="line">        proxy = True</div></pre></td></tr></table></figure>
+<p><strong>在Meta类中将proxy设置为True，这个模块就成为了一个代理，这个代理是不会产生新的表的，但是功能跟其他模块一样，</strong>Django ORM中非常强大的一个功能</p>
+<p>虽然BlockAuthor是代理模块，但使用方式不变，依旧在adminx.py中编写BlockAuthor的配置代码，因为BlockAuthor继承自Author模块，所以用法跟Author模块一样，只是queryset()方法将被封杀的作者返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">class BlockAuthorAdmin(object):</div><div class="line">    # 列表显示</div><div class="line">    list_display = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;,&apos;add_time&apos;]</div><div class="line">    # 搜索范围</div><div class="line">    search_fields = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;]</div><div class="line">    # 列表过滤</div><div class="line">    list_filter = [&apos;name&apos;,&apos;age&apos;,&apos;booknums&apos;,&apos;star&apos;,&apos;is_block&apos;,&apos;add_time&apos;]</div><div class="line">    # 默认排序,&apos;-&apos;:倒序,从大到小</div><div class="line">    ordering = [&apos;-booknums&apos;]</div><div class="line">    # 只读</div><div class="line">    readonly_fields = [&apos;star&apos;]</div><div class="line">    # 刷新秒数</div><div class="line">    refresh_times = [3,5]</div><div class="line">    # 直接编辑</div><div class="line">    list_editable = [&apos;age&apos;,&apos;name&apos;]</div><div class="line"></div><div class="line">    def queryset(self):</div><div class="line">        &apos;&apos;&apos;</div><div class="line">        过滤出被封杀的作者</div><div class="line">        :return:</div><div class="line">        &apos;&apos;&apos;</div><div class="line">        qs = super(BlockAuthorAdmin, self).queryset()</div><div class="line">        qs = qs.filter(is_block=True)</div><div class="line">        return qs</div></pre></td></tr></table></figure>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%B0%81%E6%9D%80%E4%BD%9C%E8%80%85.png" alt=""></p>
+<p>定义好了作者相关的内容，接着就来定义出版社</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class PressAdmin(object):</div><div class="line">    list_display = [&apos;pressname&apos;, &apos;book&apos;, &apos;go_to&apos;]</div><div class="line">    search_fields = [&apos;pressname&apos;, &apos;book__bookname&apos;]</div><div class="line">    list_filter = [&apos;pressname&apos;, &apos;book__bookname&apos;, &apos;add_time&apos;]</div></pre></td></tr></table></figure>
+<p>出版社的xadmin配置代码与Author是类似的，只是search_fields和list_filter中使用了book__bookname这个属性，这是因为Press模块中定义了book这个外键指向Book模块，那么搜索或者过滤时就要说清楚搜索Book模块的什么值？不然xadmin就会报错，这里搜索和过滤都是通过书名来进行的</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E5%87%BA%E7%89%88%E7%A4%BExadmin.png" alt=""></p>
+<p>接着就来写书籍的xadmin配置代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class PressInline(object):</div><div class="line">    model = Press</div><div class="line">    extra = 0</div><div class="line"></div><div class="line">class BookAdmin(object):</div><div class="line">    list_display = [&apos;bookname&apos;, &apos;author&apos;,&apos;add_time&apos;]</div><div class="line">    # 搜索外键时，要明确搜索该外键哪个值</div><div class="line">    search_fields = [&apos;bookname&apos;, &apos;author__name&apos;]</div><div class="line">    list_filter = [&apos;bookname&apos;, &apos;author__name&apos;,&apos;add_time&apos;]</div><div class="line">    # 富文本显示</div><div class="line">    style_fields = &#123;&apos;des&apos;:&apos;ueditor&apos;&#125;</div><div class="line">    # 书籍和出版社是一对多关系</div><div class="line">    inlines = [PressInline,]</div></pre></td></tr></table></figure>
+<p>list_display、search_fields、list_filter就不多说了，看到inlines关键字，它的作用是是将Press引入到Book的编辑界面，做界面的拼接，文字可能描述不明白，看图</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/%E4%B9%A6%E7%B1%8D%E5%87%BA%E7%89%88%E7%A4%BE.png" alt=""></p>
+<p>在书籍的编辑界面，嵌入了出版社的编辑界面，这既是inlines关键字的作用，嵌入的方式是通过定义一个新的类，该类的model定义为Press模块，然后定义extra关键字为0</p>
+<p>同时也要主要inlines定义在哪个模块？它是不用使用到多对多关系中的，比如书籍与作者是多对多的关系，那么在书籍模块的编辑界面就不能嵌入作者模块的编辑界面，同理作者模块的编辑界面也不能嵌入到书籍模块中，还需要主要，虽然它可以使用到一对多的情况下，但也只能在一那一边，如书籍和出版社是一对多的关系，一本书籍只能在一个出版社出版，但是一个出版社却可以出版不同的数据，那么书籍在一这边，而出版社在多这边，所以inlines只能使用到BookAdmin，而不能使用PressAdmin</p>
+<p>上面的配置代码写完后，不要忘了注册一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 注册</div><div class="line">xadmin.site.register(Author,AuthorAdmin)</div><div class="line">xadmin.site.register(BlockAuthor,BlockAuthorAdmin)</div><div class="line">xadmin.site.register(Book,BookAdmin)</div><div class="line">xadmin.site.register(Press,PressAdmin)</div></pre></td></tr></table></figure>
+<p>此时运行程序，在127.0.0.1:8000/xadmin下就可以看到我们功能强大的后台了，当然要进入后台，你需要创建一个超级管理员，在项目的根目录下运行下面命令创建超级管理员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py createsuperuser</div></pre></td></tr></table></figure>
+<p>xadmin基础的用法就到这里了，掌握了上面的内容，你应该可以熟练的使用xadmin了，后面会讲讲如何编辑xadmin中的插件，比如在上面书籍的相关代码中，我使用了富文本插件，原始的xadmin中是没有这个插件的，我们需要自己编写这个插件，后面的文章会聊聊这个内容</p>
+<p><img src="http://obfs4iize.bkt.clouddn.com/xadmin%E5%AF%8C%E6%96%87%E6%9C%AC.png" alt=""></p>
+<p>编程创造乐趣—ayuliao</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/30/python处理execl使用方式/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/30/一次面试的简单思考/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+        </body>
+    
+</html>
