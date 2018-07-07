@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            python装饰器 | 
+        
+        ayuLiao
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="ayuLiao">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",python">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ayuLiao">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://lmwen.top">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="python装饰器 | ayuLiao">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="python"> 
+
+    
+        <meta property="article:published_time" content="Sun Jan 07 2018 20:39:11 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Jul 07 2018 20:47:47 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="python装饰器 | ayuLiao">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://lmwen.top" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://lmwen.top/2018/01/07/python装饰器/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "ayuLiao",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "ayuLiao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "过往不恋，未来不惧，当下不乱"
+    },
+    "headline": "python装饰器",
+    "url": "http://lmwen.top/2018/01/07/python装饰器/index.html",
+    "datePublished": "Sun Jan 07 2018 20:39:11 GMT+0800",
+    "dateModified": "Sat Jul 07 2018 20:47:47 GMT+0800",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://lmwen.top"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#装饰器"><span class="post-toc-number">1.</span> <span class="post-toc-text">装饰器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#装饰器何时运行"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">装饰器何时运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#带参数的装饰器"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">带参数的装饰器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类装饰器"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">类装饰器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#python标准库中的装饰器"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">python标准库中的装饰器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#装饰器调用的顺序"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">装饰器调用的顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">小结</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://obfs4iize.bkt.clouddn.com/python%E8%A3%85%E9%A5%B0%E5%99%A8.jpg)">
+    
+            <p class="article-headline-p">
+                python装饰器
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ayuLiao</strong>
+        <span>1月 07, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/python/">python</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=python装饰器&url=http://lmwen.top/2018/01/07/python装饰器/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=python装饰器&url=http://lmwen.top/2018/01/07/python装饰器/index.html&via=ayuLiao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://lmwen.top/2018/01/07/python装饰器/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://lmwen.top/2018/01/07/python装饰器/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lmwen.top/2018/01/07/python装饰器/index.html&title=python装饰器" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><p>本节尝试较深入的讲解一下装饰器，可能你经常使用，让自己的code更python化，但却没有对装饰器有个深刻的认识，本节的目的就是带你走入装饰器深处去看看。</p>
+<p>一句话定义python中的装饰器</p>
+<p>装饰器本质上是一个利用了闭包特性的python函数，作用是装饰以存在的函数。主要目的是在不用修改函数的前提下为函数添加一些新功能，比如打印日志、性能测试、权限验证等，在很多web框架中，常用装饰器做参数过滤、权限认证和url绑定等功能。当然装饰器并不一定要为被装饰对象添加新功能，不添加新功能的用法虽然比较少见，但也相应的使用场景。</p>
+<p>这里写一个性能测试的装饰器，其核心功能就是打印函数运行前和运行后的时间差</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">speed_time</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_time</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">        func_name = func.__name__</div><div class="line">        t0 = time.perf_counter()</div><div class="line">        res = func(*args, **kwargs)</div><div class="line">        t1 = time.perf_counter()</div><div class="line">        print(<span class="string">'%s run time is (%s), the res is (%s)'</span> % (func_name,t1-t0, res))</div><div class="line">    <span class="keyword">return</span> print_time</div></pre></td></tr></table></figure>
+<p>上面的代码就是一个常见的装饰器，装饰器运用了闭包的特性，如果你不知道啥是闭包，需要先看<a href="http://hackpython.com/PyStarTrek/#/python%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85" target="_blank" rel="external">Python中的闭包</a>了解一下</p>
+<p>看到speed_time()函数，它的参数其实是一个函数，也就是被装饰器装饰的函数，speed_time()函数内部是print_time()函数，print_time()中的逻辑其实就是在被装饰函数调用运行前后记录时间，最后打印出被装饰函数的函数名称，运行时间差等信息。</p>
+<p>speed_time()函数的作用就是将func()函数替换成了print_time()函数</p>
+<p>写两个简单的函数，并通过speed_time装饰它们，看看效果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@speed_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">for_10000</span><span class="params">()</span>:</span></div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10000</span>):</div><div class="line">        sum += i</div><div class="line">    <span class="keyword">return</span> sum</div><div class="line"></div><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line"><span class="meta">@speed_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">user_reduce</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x,y:x+y,range(<span class="number">10000</span>))</div><div class="line"></div><div class="line">for_10000()</div><div class="line">user_reduce()</div></pre></td></tr></table></figure>
+<p>这两个函数也是我有意为之，看看就是是reduce函数快，还是普通的for迭代更快，结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for_10000 run time is (0.0012948440271429718), the res is (49995000)</div><div class="line">user_reduce run time is (0.001878352020867169), the res is (49995000)</div></pre></td></tr></table></figure>
+<p>for_10000方法运行时间是    0.00129<br>user_reduce方法运行时间是  0.00187</p>
+<p>普通for循环要更加快速</p>
+<p>这份代码的运行环境是： mac pro、python3.5.4</p>
+<p>虽然for更快一些，但很明显，reduce()函数的写法更加优雅，所以在编写项目时，你需要综合考虑速度和代码结构，我个人更偏向与reduce()，为啥？因为不会Python的第一眼看不懂啊:-D</p>
+<p>扯远了，现在理解一下<strong>speed_time()函数的作用就是将func()函数替换成了print_time()函数</strong>，一般而言，装饰器为了给被装饰函数填写一些新的功能，都会返回一个具有相应的功能的新函数来代替旧函数，在python中，函数也是一个对象，可能像对象那样赋值、调用，可以打印一下被装饰器装饰了的for_1000()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">print(for_10000)</div><div class="line"></div><div class="line">输出：</div><div class="line">&lt;function speed_time.&lt;locals&gt;.print_time at 0x1054c4158&gt;</div></pre></td></tr></table></figure>
+<p>可以发现for_10000函数的指针指向的是print_time()函数。</p>
+<p>对于装饰器，我们可以不用@，直接使用 for_10000 = speed_time(for_10000) ，效果是一样的，但明显使用@更加方便</p>
+<p>再仔细看speed_time()函数中的print_time()函数，它有 <em>args、\</em>*kwargs参数，作用就是，当被装饰函数具有参数时，可以接收到，使用*args、**kwargs后，无论被装饰函数具有多少参数都可以轻松搞定</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@speed_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">for_num</span><span class="params">(num)</span>:</span></div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</div><div class="line">        sum += i</div><div class="line">    <span class="keyword">return</span> sum</div><div class="line"></div><div class="line">for_num(<span class="number">1000</span>)</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">for_num run time is (0.00019604701083153486), the res is (499500)</div></pre></td></tr></table></figure>
+<p>不过speed_time装饰器还有不足，就是被装饰函数本地的<strong>name</strong>和<strong>doc</strong>被覆盖了（函数元信息被覆盖了），显示的是speed_time装饰器中print_time的<strong>name</strong>和<strong>doc</strong>，当然说的不是说运行时，而是运行后。</p>
+<p>具体如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@speed_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">for_num</span><span class="params">(num)</span>:</span></div><div class="line">    <span class="string">'''for_num __doc__'''</span></div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</div><div class="line">        sum += i</div><div class="line">    <span class="keyword">return</span> sum</div><div class="line"></div><div class="line">for_num(<span class="number">1000</span>)</div><div class="line"></div><div class="line">print(for_num.__name__)</div><div class="line">print(for_num.__doc__)</div></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for_num run time is (3.31401824951e-05), the res is (499500) <span class="comment">#运行时输出</span></div><div class="line">print_time <span class="comment">#运行后输出</span></div><div class="line">None <span class="comment">#运行后输出</span></div></pre></td></tr></table></figure>
+<p>可以看到，调用for_num（1000）函数时，运行中的<strong>name</strong>确实是for_num，但运行后，变成了print_time，核心原因是装饰器为了给被装饰函数填写新功能返回了一个新函数</p>
+<p>使用python本身为我们提供的functools.wraps装饰器可以解决这个问题，functools.wraps装饰器会把被装饰函数的相关属性复制到print_time中</p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> functools</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">speed_time</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_time</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">        func_name = func.__name__</div><div class="line">        t0 = time.time()</div><div class="line">        res = func(*args, **kwargs)</div><div class="line">        t1 = time.time()</div><div class="line">        print(<span class="string">'%s run time is (%s), the res is (%s)'</span> % (func_name,t1-t0, res))</div><div class="line">    <span class="keyword">return</span> print_time</div><div class="line">    </div><div class="line">    </div><div class="line"><span class="meta">@speed_time</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">for_num</span><span class="params">(num)</span>:</span></div><div class="line">    <span class="string">'''for_num __doc__'''</span></div><div class="line">    sum = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(num):</div><div class="line">        sum += i</div><div class="line">    <span class="keyword">return</span> sum</div><div class="line"></div><div class="line">for_num(<span class="number">1000</span>)</div><div class="line"></div><div class="line">print(for_num.__name__)</div><div class="line">print(for_num.__doc__)</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for_num run time is (3.09944152832e-05), the res is (499500)</div><div class="line">for_num</div><div class="line">for_num __doc__</div></pre></td></tr></table></figure>
+<h2 id="装饰器何时运行"><a href="#装饰器何时运行" class="headerlink" title="装饰器何时运行"></a>装饰器何时运行</h2><p>装饰器除了可以在不改动被装饰函数的前提下添加额外功能这个特性外，它的运行时间也是个特性，装饰在被装饰函数定义之后<strong>立即运行</strong></p>
+<p>通过下面代码来理解这句话</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">mydecorate</span><span class="params">(func)</span>:</span></div><div class="line">    print(<span class="string">'this is mydecorate'</span>)</div><div class="line">    <span class="keyword">return</span> func</div><div class="line"></div><div class="line"><span class="meta">@mydecorate</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'this is f1'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'this is f2'</span>)</div><div class="line">    </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    print(<span class="string">'main ---&gt; run'</span>)</div><div class="line">    f1()</div><div class="line">    f2()</div></pre></td></tr></table></figure>
+<p>我们定义了一个装饰器mydecorate，作用就是打印一下，接着将这个装饰器用于f1()方法，但f2()方法没有使用mydeccorate装饰器</p>
+<p>运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">this is mydecorate</div><div class="line">main ---&gt; run</div><div class="line">this is f1</div><div class="line">this is f2</div></pre></td></tr></table></figure>
+<p>发现装饰器mydecorate在f1()方法被调用前就被调用了。</p>
+<p>结论就是：<strong>函数装饰器在导入模块时就立即执行了，而被装饰的函数只有在明确调用时才会运行</strong></p>
+<p>在实际情况中，装饰器通常都在一个模块定义，然后应用到其他模块上，那么在import引用时，装饰器就已经被调用了</p>
+<p>看回到mydecorate装饰器，它没有返回一个新的函数来代替被装饰函数，反而原封不动的返回了被装饰函数，在python web框架中就可以使用这样的装饰器把函数添加到某种中央注册处。</p>
+<p>还有一些其他的用途，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">game_rule = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">use_rule</span><span class="params">(func)</span>:</span></div><div class="line">    game_rule.append(func)</div><div class="line">    <span class="keyword">return</span> func</div><div class="line"></div><div class="line"><span class="meta">@use_rule</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">rule1</span><span class="params">(user_id)</span>:</span></div><div class="line">    print(<span class="string">'满20级送狼牙棒'</span>)</div><div class="line"></div><div class="line"><span class="meta">@use_rule</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">rule2</span><span class="params">(user_id)</span>:</span></div><div class="line">    print(<span class="string">'满50级送水晶'</span>)</div><div class="line"></div><div class="line"><span class="meta">@use_rule</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">rule3</span><span class="params">(user_id)</span>:</span></div><div class="line">    print(<span class="string">'满100级送Python宝典'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_rule_list</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">for</span> gr <span class="keyword">in</span> game_rule:</div><div class="line">        gr(<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    run_rule_list()</div></pre></td></tr></table></figure>
+<p>代码中，我们定义了一个use_rule装饰器，它的作用是将被装饰方法添加到一个list中，供后面的代码调用</p>
+<p>代码中还定义了几个游戏规则的方法，最后再通过run_rule_list方法来调用它们，此时使用装饰器就可以很自由的控制那些游戏规则要开启，比如不要rule2这个游戏规则了，那就把装饰器删除或注释掉则可</p>
+<h2 id="带参数的装饰器"><a href="#带参数的装饰器" class="headerlink" title="带参数的装饰器"></a>带参数的装饰器</h2><p>现在应该清晰了装饰器主要的行为了：</p>
+<p>?&gt;把被装饰的函数替换成新函数，新函数接受与被装饰函数相同的函数，而且返回被装饰函数本该返回的值，唯一的区别在于新函数在被装饰函数调用前会做一些额外的操作</p>
+<p>除了上面实现的简单装饰器外，还有带参数的装饰器，带参数的装饰器可以实现更加复杂的逻辑，比如可以在装饰器中打印指定级别的日志。</p>
+<p>不同的业务函数可以需要不同级别的日志</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">logger</span><span class="params">(level)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></div><div class="line">            <span class="keyword">if</span> level == <span class="string">'warn'</span>:</div><div class="line">                print(<span class="string">'Warn Info'</span>)</div><div class="line">            <span class="keyword">elif</span> level == <span class="string">'error'</span>:</div><div class="line">                print(<span class="string">'error Info'</span>)</div><div class="line">            <span class="keyword">return</span> func(*args)</div><div class="line">        <span class="keyword">return</span> wrapper</div><div class="line">    <span class="keyword">return</span> decorate</div><div class="line"></div><div class="line"><span class="meta">@logger(level='error') #先调用了工厂函数，返回了装饰器</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">myname</span><span class="params">(name=<span class="string">'ayuliao'</span>)</span>:</span></div><div class="line">    print(<span class="string">'My name is %s'</span>%name)</div><div class="line"></div><div class="line">myname()</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error Info</div><div class="line">My name is ayuliao</div></pre></td></tr></table></figure>
+<p>仔细观察带参数的装饰器，可以发现所谓带参数的装饰器就是<strong>对原有装饰器的一个函数封装，并返回一个装饰器</strong>，简单来说，就是装饰器工厂函数，调用装饰器工厂函数会返回真正的装饰器，这才是应用到目标函数上的装饰器，通过工厂函数的形式，让装饰器可以接受到新的参数。</p>
+<p>回忆一下之前讲解的闭包，我们可以将带参数的装饰器理解成带参数的闭包</p>
+<p>当解释器看到<code>@logger(level=&#39;error&#39;)</code>时，python能发现最外面的那层封装，它会将参数传递给内部的装饰器环境中</p>
+<p><code>@logger(level=&#39;error&#39;)</code> 等于 <code>@decorate</code></p>
+<h2 id="类装饰器"><a href="#类装饰器" class="headerlink" title="类装饰器"></a>类装饰器</h2><p>实现装饰器的方式不局限与函数，类同样也可以实现一个装饰器，而且类装饰器灵活性、封装性都比函数好。</p>
+<p>先写一个简单的类装饰器，用于打印日志：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func)</span>:</span></div><div class="line">        self._func = func</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></div><div class="line">        print(self._func.__name__ + <span class="string">' is running'</span>)</div><div class="line">        self._func()</div><div class="line"></div><div class="line"><span class="meta">@Logger</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ayu</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'ayu'</span>)</div><div class="line"></div><div class="line">ayu()</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ayu is running</div><div class="line">ayu</div></pre></td></tr></table></figure>
+<p>可以看出，所谓的类装饰器，主要靠<code>__call__</code>方法，当使用@调用类装饰器时，python解释器就会调用该方法</p>
+<p>实现一个比较复杂的装饰器来满足打印日志的要求，比如，有时需要将某些重要的bug通过邮件的形式通知自己，但有时只需要将某些bug记录到文件中则可，可以通过类装饰器相互继承的方式来实现上面的需求</p>
+<p>先实现简单记录bug到文件中装饰器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Logger</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func, logfile=<span class="string">'out.log'</span>)</span>:</span></div><div class="line">        self._func = func</div><div class="line">        self.logfile = logfile</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span></div><div class="line">        log_string = self._func.__name__ + <span class="string">' is running'</span></div><div class="line">        print(log_string)</div><div class="line">        <span class="keyword">with</span> open(self.logfile, <span class="string">'a'</span>) <span class="keyword">as</span> f:</div><div class="line">            f.write(log_string + <span class="string">'\n'</span>)</div><div class="line">        self._func()</div><div class="line">        self.send()</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="meta">@Logger</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">ayu</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'this is ayu'</span>)</div><div class="line"></div><div class="line">ayu()</div></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ayu is running</div><div class="line">this is ayu</div></pre></td></tr></table></figure>
+<p>因为类装饰被调用时，就是就是调用<code>__call__</code>，所以将装饰器核心的内容写入<code>__call__</code>中就好了</p>
+<p>从上面代码中可以看出，我们实现了一个空方法 <code>send()</code>，该方法可以满足各种发送信息要求，如果想发送email，那么继承<code>Logger</code>类重写send()方法则可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">email_logger</span><span class="params">(Logger)</span>:</span></div><div class="line">    <span class="comment"># 要通过获得被装饰方法func</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, func,email=<span class="string">'ayuliao@xxx.com'</span>,*args, **kwargs)</span>:</span></div><div class="line">        self.email = email</div><div class="line">        super(email_logger, self).__init__(func,*args, **kwargs)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment">#发送邮件的逻辑代码</span></div><div class="line">        print(<span class="string">'send email'</span>)</div><div class="line">        <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="meta">@email_logger</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">liao</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'this is liao'</span>)</div><div class="line"></div><div class="line">liao()</div></pre></td></tr></table></figure>
+<p><code>email_logger</code>类继承了<code>Logger</code>类，重写了send方法，但重点应该是email_logger类的<code>__init__</code>方法，该方法必须要传<code>func</code>参数，表示被email_logger类装饰器装饰的函数，然后要将它传递给它父类的<code>__init__</code>方法</p>
+<p>运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">liao is running</div><div class="line">this is liao</div><div class="line">send email</div></pre></td></tr></table></figure>
+<h2 id="python标准库中的装饰器"><a href="#python标准库中的装饰器" class="headerlink" title="python标准库中的装饰器"></a>python标准库中的装饰器</h2><p>functools.lru_cache装饰器是python内置装饰器中的一个，非常实用，其作用简单而言就是做缓存，它可以将耗时函数的结果保存起来，避免传入相同的参数时重复计算，LRU是<code>Least Recently Used</code>的缩写，表明缓存不会无限增长，一段时间不使用，缓存条目就会被扔掉</p>
+<p>通过斐波那函数来做lru_cache装饰器使用的示例，为了可以直观的感受，先定义一个打印运行时间的装饰器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clock</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clocked</span><span class="params">(*args)</span>:</span></div><div class="line">        t0 = time.perf_counter()</div><div class="line">        result = func(*args) <span class="comment">#调用函数</span></div><div class="line">        elapsed = time.perf_counter() - t0</div><div class="line">        name = func.__name__</div><div class="line">        arg_str = <span class="string">','</span>.join(repr(arg) <span class="keyword">for</span> arg <span class="keyword">in</span> args)</div><div class="line">        print(<span class="string">'[%9.8fs] %s(%s) -&gt; %r'</span> % (elapsed, name, arg_str, result))</div><div class="line">        <span class="keyword">return</span> result</div><div class="line">    <span class="keyword">return</span> clocked</div><div class="line"></div><div class="line"><span class="meta">@clock</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">myfunc</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n&lt;<span class="number">2</span>:</div><div class="line">        <span class="keyword">return</span> n</div><div class="line">    <span class="keyword">return</span> myfunc(n<span class="number">-2</span>) + myfunc(n<span class="number">-1</span>)</div><div class="line"></div><div class="line">print(myfunc(<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<p>上面的代码，我们定义了<code>clock</code>这个装饰器，它的功能其实就是记录一下函数运行时间，然后再将与函数相关的内容打印一下，上面代码运行结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[0.00000056s] myfunc(0) -&gt; 0</div><div class="line">[0.00000057s] myfunc(1) -&gt; 1</div><div class="line">[0.00009055s] myfunc(2) -&gt; 1</div><div class="line">[0.00000040s] myfunc(1) -&gt; 1</div><div class="line">[0.00000043s] myfunc(0) -&gt; 0</div><div class="line">[0.00000040s] myfunc(1) -&gt; 1</div><div class="line">[0.00001368s] myfunc(2) -&gt; 1</div><div class="line">[0.00002674s] myfunc(3) -&gt; 2</div><div class="line">[0.00013063s] myfunc(4) -&gt; 3</div><div class="line">[0.00000039s] myfunc(1) -&gt; 1</div><div class="line">[0.00000039s] myfunc(0) -&gt; 0</div><div class="line">[0.00000040s] myfunc(1) -&gt; 1</div><div class="line">[0.00001298s] myfunc(2) -&gt; 1</div><div class="line">[0.00002570s] myfunc(3) -&gt; 2</div><div class="line">[0.00000036s] myfunc(0) -&gt; 0</div><div class="line">[0.00000039s] myfunc(1) -&gt; 1</div><div class="line">[0.00001290s] myfunc(2) -&gt; 1</div><div class="line">[0.00000038s] myfunc(1) -&gt; 1</div><div class="line">[0.00000044s] myfunc(0) -&gt; 0</div><div class="line">[0.00000039s] myfunc(1) -&gt; 1</div><div class="line">[0.00001334s] myfunc(2) -&gt; 1</div><div class="line">[0.00002670s] myfunc(3) -&gt; 2</div><div class="line">[0.00005169s] myfunc(4) -&gt; 3</div><div class="line">[0.00008953s] myfunc(5) -&gt; 5</div><div class="line">[0.00023341s] myfunc(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure>
+<p>可以看出<code>myfunc(1)</code>被调用了多次，<code>myfunc(2)</code>也被调用了多次，但如果使用了lru_cache，进行了缓存，性能会提高很多</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">.</div><div class="line">.</div><div class="line"></div><div class="line"><span class="meta">@functools.lru_cache() #lru_cache是工厂函数，所以要调用它，它的返回值才是装饰器</span></div><div class="line"><span class="meta">@clock</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">myfunc</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n&lt;<span class="number">2</span>:</div><div class="line">        <span class="keyword">return</span> n</div><div class="line">    <span class="keyword">return</span> myfunc(n<span class="number">-2</span>) + myfunc(n<span class="number">-1</span>)</div><div class="line"></div><div class="line">print(myfunc(<span class="number">6</span>))</div></pre></td></tr></table></figure>
+<p>就多了<code>@functools.lru_cache()</code>一句代码，python黑魔法就发挥了作用，看其运行结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[0.00000053s] myfunc(0) -&gt; 0</div><div class="line">[0.00000054s] myfunc(1) -&gt; 1</div><div class="line">[0.00005012s] myfunc(2) -&gt; 1</div><div class="line">[0.00000101s] myfunc(3) -&gt; 2</div><div class="line">[0.00006488s] myfunc(4) -&gt; 3</div><div class="line">[0.00000073s] myfunc(5) -&gt; 5</div><div class="line">[0.00007893s] myfunc(6) -&gt; 8</div><div class="line">8</div></pre></td></tr></table></figure>
+<p>lru_cache其实是一个装饰器工厂函数，可以接受参数配置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@functools.lru_cache(maxsize=128, typed=False)</span></div></pre></td></tr></table></figure>
+<ul>
+<li>maxsize指定存储多少个调用的结果，缓存慢之后，旧结果会被删除，以腾出空间，接受新的结果，<strong>为了达到最佳性能，maxsize应该设为2的幂</strong></li>
+<li>typed参数设为True，把不同的参数类型得到的结果分开保存，即吧通常认为相等的浮点数和整数参数区分开来（比如1和1.0）</li>
+</ul>
+<p>lru_cache使用字典存储结果，而键更加调用时传入的定位参数和关键字参数创建，<strong>所以被lru_cache装饰的函数，它的所有参数都必须是可散列的</strong></p>
+<h2 id="装饰器调用的顺序"><a href="#装饰器调用的顺序" class="headerlink" title="装饰器调用的顺序"></a>装饰器调用的顺序</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@a</span></div><div class="line"><span class="meta">@b</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'ayu'</span>)</div></pre></td></tr></table></figure>
+<p>等于</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'ayu'</span>)</div><div class="line">    </div><div class="line">f = d1(d2(f))</div></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>python装饰器就简单总结到这里，编写代码时，优雅的使用装饰器，可以让代码变得更加美观</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/02/07/python浅拷贝和深拷贝/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/30/我的2017/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="ayuLiao's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        myemailliao@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="myemailliao@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://www.github.com/ayuliao" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2016&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>ayuLiao
+            <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <div>
+        本站总访问量 <span id="busuanzi_value_site_pv"></span> &nbsp&nbsp&nbsp
+        你是第<span id="busuanzi_value_site_uv"></span>个来到的小伙伴
+        </div>
+        </div>
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==")</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+        </body>
+    
+</html>
